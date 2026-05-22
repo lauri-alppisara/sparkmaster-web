@@ -1,4 +1,4 @@
-# SparkMaster website
+# Sparkmaster website
 
 Static GitHub Pages website for sparkmaster.app.
 
