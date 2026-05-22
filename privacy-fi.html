@@ -8,27 +8,19 @@
   <link rel="canonical" href="https://sparkmaster.app/privacy-fi.html">
   <link rel="icon" href="assets/app-icon.png">
   <style>
-:root{color-scheme:dark;--bg:#07090d;--panel:#0f131b;--text:#f4f4f5;--muted:#b7bcc7;--line:rgba(255,255,255,.12);--accent:#e53e3e}
-*{box-sizing:border-box}
+:root{color-scheme:dark;--bg:#07090d;--text:#f4f4f5;--muted:#b7bcc7;--line:rgba(255,255,255,.12);--accent:#e53e3e}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;min-height:100vh;background:radial-gradient(ellipse 70% 40% at 50% 0%,rgba(229,62,62,.12),transparent 65%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6}
-a{color:inherit;text-decoration-color:rgba(229,62,62,.75);text-underline-offset:.18em}
-a:hover{color:#fff;text-decoration-color:var(--accent)}
-.wrap{width:min(900px,calc(100% - 40px));margin:0 auto;padding:32px 0 72px}
+a{color:inherit;text-decoration-color:rgba(229,62,62,.75);text-underline-offset:.18em}a:hover{color:#fff;text-decoration-color:var(--accent)}
+.wrap{width:min(940px,calc(100% - 40px));margin:0 auto;padding:32px 0 72px}
 .topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0 34px}
 .brand{display:inline-flex;align-items:center;gap:12px;color:var(--text);text-decoration:none;font-weight:800;letter-spacing:-.02em}
-.brand img{width:40px;height:40px;border-radius:10px}
-.nav{display:flex;align-items:center;gap:14px;color:var(--muted);font-size:14px}
+.brand img{width:40px;height:40px;border-radius:10px}.nav{display:flex;align-items:center;gap:14px;color:var(--muted);font-size:14px;flex-wrap:wrap}
 .card{background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:24px;padding:clamp(24px,4vw,56px);box-shadow:0 24px 80px rgba(0,0,0,.35)}
 h1{margin:0 0 10px;font-size:clamp(2rem,5vw,3.4rem);line-height:1.05;letter-spacing:-.055em}
 h2{margin:42px 0 12px;padding-top:18px;border-top:1px solid var(--line);font-size:clamp(1.25rem,2.4vw,1.65rem);line-height:1.2;letter-spacing:-.025em}
-h3{margin:26px 0 8px;font-size:1.08rem;color:#fff}
-p,li{color:var(--muted);font-size:16px}
-p{margin:10px 0}
-ul{margin:12px 0 0;padding-left:22px}
-li{margin:7px 0}
-strong{color:#fff;font-weight:700}
-.footer{margin-top:28px;color:rgba(255,255,255,.55);font-size:13px;text-align:center}
-@media(max-width:640px){.topbar{align-items:flex-start;flex-direction:column}.nav{flex-wrap:wrap}}
+h3{margin:26px 0 8px;font-size:1.08rem;color:#fff}p,li{color:var(--muted);font-size:16px}p{margin:10px 0}ul{margin:12px 0 0;padding-left:22px}li{margin:7px 0}strong{color:#fff;font-weight:700}
+.footer{margin-top:28px;color:rgba(255,255,255,.55);font-size:13px;text-align:center}@media(max-width:640px){.topbar{align-items:flex-start;flex-direction:column}}
 </style>
 </head>
 <body>
@@ -41,77 +33,113 @@ strong{color:#fff;font-weight:700}
       <nav class="nav" aria-label="Navigation">
         <a href="/">Home</a>
         <a href="privacy-en.html">English</a>
-        <a href="mailto:support@sparkmaster.app">Support</a>
+        <a href="support.html">Support</a>
       </nav>
     </header>
     <article class="card">
 <h1>Tietosuojaseloste — Sparkmaster</h1>
-<p>Tämä dokumentti koskee <strong>Sparkmaster</strong> -mobiilisovellusta (<strong>julkaisija: Sublime Web Oy</strong>).</p>
+<p>Tämä tietosuojaseloste koskee <strong>Sparkmaster</strong>-mobiilisovellusta ja verkkosivustoa <strong>sparkmaster.app</strong>.</p>
+<p>Julkaisija ja rekisterinpitäjä: <strong>Sublime Web Oy</strong></p>
+<p>Y-tunnus: <strong>FI35258693</strong></p>
+<p>Verkkosivusto: <a href="https://sparkmaster.app">https://sparkmaster.app</a></p>
+<p>Yhteydenotot: <a href="mailto:support@sparkmaster.app">support@sparkmaster.app</a></p>
 <p>Päivitetty: 22.5.2026</p>
-<h2>1. Rekisterinpitäjä</h2>
-<p>Sublime Web Oy</p>
-<p>Y-tunnus: FI35258693</p>
-<p><a href="https://sparkmaster.app">https://sparkmaster.app</a></p>
-<p>support@sparkmaster.app</p>
-<h2>2. Sovelluksen tarkoitus</h2>
-<p>Sparkmaster on Yamaha ja Mercury perämoottoreiden huolto- ja ylläpitosovellus. Se on suunniteltu toimimaan ensisijaisesti <strong>paikallisesti käyttäjän laitteella</strong> — sovellus ei kerää käyttäjän henkilötietoja palvelimillemme.</p>
-<h2>3. Mitä tietoja kerätään</h2>
-<h3>3.1 Käyttäjän laitteelle tallennettavat tiedot</h3>
-<p>Seuraavat tiedot tallennetaan <strong>vain käyttäjän laitteelle</strong>, eivätkä ne lähde sovelluksen ulkopuolelle:</p>
+<h2>1. Sovelluksen tarkoitus</h2>
+<p>Sparkmaster on Yamaha- ja Mercury-perämoottoreiden huolto- ja ylläpitosovellus. Sovellus auttaa käyttäjää tallentamaan moottorin perustietoja, huoltohistoriaa, tarkistuksia, valokuvia ja muita veneilyyn liittyviä muistiinpanoja.</p>
+<p>Sparkmaster on suunniteltu ensisijaisesti <strong>offline-first-sovellukseksi</strong>. Tämä tarkoittaa, että sovelluksen perustiedot tallennetaan oletuksena käyttäjän omalle laitteelle, eikä niitä lähetetä Sublime Web Oy:n palvelimille ilman käyttäjän erillistä toimintoa tai suostumusta.</p>
+<h2>2. Verkkosivusto</h2>
+<p>Sparkmaster.app on staattinen verkkosivusto. Sivustolla ei ole käyttäjätilejä, lomakkeita tai maksutoimintoja, eikä sivusto itsessään kerää henkilötietoja.</p>
+<p>Jos käyttäjä ottaa yhteyttä sähköpostitse, Sublime Web Oy vastaanottaa ne tiedot, jotka käyttäjä itse päättää lähettää, kuten sähköpostiosoitteen, viestin sisällön ja mahdolliset liitteet.</p>
+<h2>3. Mitä tietoja sovellus käsittelee</h2>
+<h3>3.1 Laitteelle tallennettavat tiedot</h3>
+<p>Sovellus voi tallentaa käyttäjän laitteelle esimerkiksi seuraavia tietoja:</p>
 <ul>
-<li><strong>Moottorin tiedot</strong> käyttäjän syöttäminä (malli, sarjanumero, vuosi, käyttötunnit, veneen nimi)</li>
-<li><strong>Huoltohistoria</strong> käyttäjän kirjaamana</li>
-<li><strong>Valokuvat</strong> käyttäjän ottamina (moottorista, huoltovaiheista)</li>
-<li><strong>Reissudata</strong> (GPS-koordinaatit, käyttöaika) jos käyttäjä käyttää reissuseurantaa</li>
-<li><strong>Anonyymi tunnus (UUID)</strong> jos käyttäjä osallistuu yhteisön kontribuutioihin</li>
+<li><strong>Moottorin tiedot</strong>, kuten malli, sarjanumero, vuosimalli, käyttötunnit ja veneen nimi</li>
+<li><strong>Huoltohistoria</strong>, kuten tehdyt huollot, päivämäärät, osat, työvaiheet ja omat muistiinpanot</li>
+<li><strong>Valokuvat</strong>, jotka käyttäjä lisää moottorista, osista tai huoltovaiheista</li>
+<li><strong>Tarkistuslistat ja huoltomuistiinpanot</strong></li>
+<li><strong>Reissudata</strong>, kuten GPS-koordinaatit, reitin tiedot ja käyttöaika, jos käyttäjä käynnistää reissuseurannan itse</li>
+<li><strong>Satunnainen tunniste (UUID)</strong>, jos käyttäjä käyttää yhteisö- tai kontribuutio-ominaisuuksia</li>
 </ul>
-<h3>3.2 Verkossa jaettavat tiedot</h3>
-<p>Jos käyttäjä eksplisiittisesti jakaa kontribuution yhteisölle (esim. osayhteensopivuus, työkalukokemus):</p>
+<p>Nämä tiedot tallennetaan oletuksena paikallisesti käyttäjän laitteelle.</p>
+<h3>3.2 Sijaintitiedot</h3>
+<p>Sparkmaster voi käsitellä sijaintitietoja vain, jos käyttäjä käyttää reissuseurantaa tai muuta sijaintiin perustuvaa toimintoa.</p>
+<p>Sijaintitietoja käsitellään vain käyttäjän omasta toiminnosta, kuten reissuseurannan käynnistämisestä. Sijaintitietoja ei kerätä jatkuvasti taustalla, eikä niitä lähetetä Sublime Web Oy:lle oletuksena.</p>
+<p>Jos reissuseuranta ei ole käytössä, sovellus ei käsittele sijaintitietoja.</p>
+<h3>3.3 Valokuvat</h3>
+<p>Käyttäjä voi lisätä sovellukseen valokuvia esimerkiksi moottorista, osista tai huoltovaiheista. Valokuvat tallennetaan oletuksena käyttäjän laitteelle.</p>
+<p>Jos käyttäjä myöhemmin jakaa kuvan yhteisötoiminnon kautta tai lähettää sen bugiraportin mukana, käyttäjä vastaa siitä, ettei kuvassa näy henkilötietoja, rekisterinumeroita, kasvoja, sijaintitietoja tai muuta sisältöä, jota hän ei halua jakaa.</p>
+<h3>3.4 Yhteisö- ja kontribuutiotoiminnot</h3>
+<p>Jos käyttäjä päättää julkaista yhteisökontribuution, esimerkiksi osayhteensopivuuden, työkalukokemuksen, huoltovinkin tai kuvan, sovellus voi käsitellä ja julkaista käyttäjän erikseen jakaman sisällön.</p>
+<p>Tällöin voidaan käsitellä:</p>
 <ul>
-<li>Anonyymi tunnus (UUID)</li>
-<li>Jaettu sisältö (teksti, valokuvat, osanumerot)</li>
+<li>Satunnainen tunniste (UUID)</li>
+<li>Käyttäjän jakama teksti</li>
+<li>Käyttäjän jakamat kuvat</li>
+<li>Osanumerot, mallitiedot, työkalutiedot ja muu käyttäjän vapaaehtoisesti antama sisältö</li>
 </ul>
-<p>Tämä on <strong>käyttäjän vapaaehtoinen toimi</strong> — sovellus ei jaa mitään automaattisesti.</p>
-<h3>3.3 Yhteisön sisältö</h3>
-<p>Jos käyttäjä päättää jakaa, hänen kontribuutionsa lisensoidaan Creative Commons -lisenssillä (CC-BY-4.0). Tämä tarkoittaa että sisältö on muiden käyttäjien vapaasti käytettävissä, kunhan alkuperäinen tekijä mainitaan.</p>
-<h2>4. Mitä tietoja EI kerätä</h2>
-<p>Sovellus EI kerää:</p>
+<p>Yhteisökontribuutiot ovat vapaaehtoisia. Sovellus ei julkaise mitään automaattisesti.</p>
+<p>Satunnainen tunniste (UUID) ei ole käyttäjän nimi tai sähköpostiosoite, mutta se voi olla pysyvä tekninen tunniste. Siksi sitä käsitellään varovaisuusperiaatteen mukaisesti henkilötietona silloin, kun se voi liittyä julkaistuun sisältöön.</p>
+<p>Julkaistut yhteisökontribuutiot voidaan lisensoida <strong>Creative Commons Attribution 4.0 International (CC BY 4.0)</strong> -lisenssillä. Tämä tarkoittaa, että muut voivat käyttää julkaistua sisältöä, kunhan alkuperäinen kontribuutio mainitaan lisenssin ehtojen mukaisesti.</p>
+<p>Käyttäjän tulee varmistaa ennen julkaisemista, ettei jaettava sisältö sisällä henkilötietoja tai muuta sellaista tietoa, jota hän ei halua julkiseksi.</p>
+<h2>4. Mitä tietoja emme kerää</h2>
+<p>Sparkmaster ei oletuksena kerää Sublime Web Oy:n palvelimille:</p>
 <ul>
-<li>Käyttäjän nimeä, sähköpostia tai yhteystietoja</li>
-<li>Sijaintia muulloin kuin reissun aikana (käyttäjä klikkaa manuaalisesti)</li>
-<li>Käyttötilastoa tai analytiikkadataa</li>
-<li>Mainostunnistettä tai vastaavia</li>
-<li>Yhteyksiä sosiaalisiin verkostoihin</li>
+<li>Käyttäjän nimeä</li>
+<li>Käyttäjän sähköpostiosoitetta</li>
+<li>Käyttäjän yhteystietoja</li>
+<li>Jatkuvaa sijaintiseurantaa</li>
+<li>Mainostunnisteita</li>
+<li>Sosiaalisen median profiileja</li>
+<li>Käyttäytymisanalytiikkaa</li>
+<li>Mainosverkkojen seurantatietoja</li>
 </ul>
-<h2>5. Tietojen käyttö</h2>
-<p>Käyttäjän tiedot ovat <strong>vain käyttäjän omassa käytössä</strong>. Sovellus ei lähetä niitä Sublime Web Oy:lle tai kolmansille osapuolille.</p>
-<p>Jos käyttäjä lähettää bugiraportin (sovelluksen asetuksista), raportin sisältö lähetetään sähköpostilla Sublime Web Oy:lle. Käyttäjä päättää itse mitä tietoja raporttiin sisällyttää.</p>
-<h2>6. Käyttäjän oikeudet</h2>
-<p>GDPR:n mukaisesti käyttäjällä on oikeus:</p>
-<ul>
-<li><strong>Pyytää tietojen tarkastusta</strong> — kaikki tiedot ovat käyttäjän laitteella</li>
-<li><strong>Pyytää tietojen poistoa</strong> — käyttäjä voi milloin tahansa poistaa sovelluksen tai tyhjentää sen tiedot</li>
-<li><strong>Pyytää tietojen siirtoa</strong> — Premium-tilauksella saatavilla PDF-export ja Excel-export</li>
-<li><strong>Vastustaa käsittelyä</strong> — käyttäjä voi olla osallistumatta yhteisön kontribuutioihin</li>
-</ul>
-<p>Yhteydenotot: support@sparkmaster.app</p>
-<h2>7. Tietoturva</h2>
-<p>Käyttäjän tiedot ovat sovelluksessa ja käyttäjän laitteen suojaamana. Suosittelemme käyttäjille:</p>
-<ul>
-<li>Pidä laite suojattuna salasanalla / sormenjäljellä</li>
-<li>Varmuuskopioi puhelimesi säännöllisesti</li>
-<li>Päivitä sovellus aina kun päivityksiä tulee</li>
-</ul>
-<h2>8. Premium-tilausten käsittely</h2>
-<p>Premium-ominaisuudet (esim. PDF-export) maksetaan Google Playn kautta. Sublime Web Oy ei käsittele maksukortti- tai pankkitietoja — ne käsittelee Google.</p>
+<p>Jos käyttäjä lähettää bugiraportin tai tukipyynnön sähköpostilla, viestin sisältö ja lähettäjän sähköpostiosoite tulevat Sublime Web Oy:n nähtäville.</p>
+<h2>5. Kolmannen osapuolen palvelut</h2>
+<p>Julkaisuhetkellä Sparkmaster ei käytä kolmannen osapuolen analytiikkaa, mainosverkkoja tai käyttäjäseurantaa.</p>
+<p>Premium-ominaisuudet, kuten mahdolliset vientitoiminnot, voidaan laskuttaa Google Playn kautta. Sublime Web Oy ei käsittele käyttäjän maksukortti- tai pankkitietoja. Maksutiedot käsittelee Google.</p>
 <p>Google Playn maksupolitiikat: <a href="https://policies.google.com/payments">https://policies.google.com/payments</a></p>
-<h2>9. Tämän selosteen muutokset</h2>
-<p>Tämä seloste voi muuttua sovelluksen kehittyessä. Olennaiset muutokset ilmoitetaan sovelluksen sisällä ennen voimaantuloa.</p>
-<h2>10. Yhteystiedot</h2>
+<p>Jos sovellukseen lisätään myöhemmin esimerkiksi analytiikkaa, kaatumisraportointia, pilvisynkronointia, käyttäjätilejä tai muita kolmannen osapuolen palveluita, tätä tietosuojaselostetta päivitetään ennen tai viimeistään muutoksen käyttöönoton yhteydessä.</p>
+<h2>6. Tietojen käyttö</h2>
+<p>Sovelluksessa olevia tietoja käytetään ensisijaisesti siihen, että käyttäjä voi hallita omia moottori-, huolto- ja veneilytietojaan.</p>
+<p>Sublime Web Oy käyttää sähköpostitse saatuja tukipyyntöjä ja bugiraportteja vain käyttäjän pyynnön käsittelyyn, ongelmien selvittämiseen ja palvelun parantamiseen.</p>
+<p>Yhteisötoimintoihin lähetettyä sisältöä voidaan käyttää yhteisösisällön näyttämiseen, ylläpitämiseen, moderointiin ja kehittämiseen.</p>
+<h2>7. Tietojen säilytys</h2>
+<p>Paikallisesti tallennettavat tiedot säilyvät käyttäjän laitteella, kunnes käyttäjä poistaa ne sovelluksesta, tyhjentää sovelluksen tiedot tai poistaa sovelluksen laitteeltaan.</p>
+<p>Sähköpostitse lähetettyjä tukipyyntöjä säilytetään niin kauan kuin se on tarpeen asian käsittelyä, asiakastukea ja mahdollisia jatkokysymyksiä varten.</p>
+<p>Julkaistuja yhteisökontribuutioita voidaan säilyttää osana yhteisön tietosisältöä, ellei käyttäjä pyydä niiden poistamista tai ellei niiden poistamiseen ole muuta perustetta.</p>
+<h2>8. Käyttäjän oikeudet</h2>
+<p>GDPR:n mukaisesti käyttäjällä voi olla oikeus:</p>
+<ul>
+<li>Saada pääsy omiin henkilötietoihinsa</li>
+<li>Pyytää virheellisten tietojen korjaamista</li>
+<li>Pyytää henkilötietojen poistamista</li>
+<li>Pyytää käsittelyn rajoittamista</li>
+<li>Vastustaa henkilötietojen käsittelyä</li>
+<li>Saada tiedot siirrettävässä muodossa soveltuvissa tilanteissa</li>
+</ul>
+<p>Koska sovelluksen perustiedot tallennetaan oletuksena käyttäjän omalle laitteelle, käyttäjä voi hallita, poistaa ja tyhjentää suurimman osan tiedoista suoraan sovelluksessa tai laitteen asetuksista.</p>
+<p>Jos käyttäjä on julkaissut yhteisökontribuution ja haluaa pyytää sen poistamista, hän voi ottaa yhteyttä osoitteeseen <a href="mailto:support@sparkmaster.app">support@sparkmaster.app</a>.</p>
+<h2>9. Tietoturva</h2>
+<p>Käyttäjän paikalliset tiedot ovat käyttäjän laitteen suojauksen varassa. Suosittelemme:</p>
+<ul>
+<li>Käytä laitteen lukitusta, kuten PIN-koodia, salasanaa tai biometristä tunnistusta</li>
+<li>Pidä käyttöjärjestelmä ja sovellus ajan tasalla</li>
+<li>Varmuuskopioi laitteesi säännöllisesti</li>
+<li>Älä jaa kuvia tai muistiinpanoja, joissa näkyy arkaluonteisia tai tarpeettomia henkilötietoja</li>
+</ul>
+<h2>10. Lapset</h2>
+<p>Sparkmasteria ei ole suunnattu lapsille. Sovellus on tarkoitettu perämoottoreiden huoltoon ja ylläpitoon liittyvään käyttöön.</p>
+<p>Sublime Web Oy ei tietoisesti kerää lasten henkilötietoja. Jos uskot, että lapsen henkilötietoja on päätynyt meille esimerkiksi tukipyynnön tai yhteisökontribuution kautta, ota yhteyttä osoitteeseen <a href="mailto:support@sparkmaster.app">support@sparkmaster.app</a>.</p>
+<h2>11. Kansainväliset siirrot</h2>
+<p>Sovelluksen paikalliset tiedot pysyvät käyttäjän laitteella. Jos käyttäjä lähettää sähköpostia, käyttää Google Play -maksuja tai julkaisee yhteisökontribuution, tiedot voivat kulkea kyseisten palveluntarjoajien järjestelmien kautta ja niitä voidaan käsitellä EU:n/ETA:n ulkopuolella palveluntarjoajien ehtojen ja tietosuojakäytäntöjen mukaisesti.</p>
+<h2>12. Tämän selosteen muutokset</h2>
+<p>Tätä tietosuojaselostetta voidaan päivittää sovelluksen ja verkkosivuston kehittyessä. Olennaisista muutoksista pyritään ilmoittamaan sovelluksessa tai verkkosivustolla ennen muutoksen voimaantuloa tai sen yhteydessä.</p>
+<h2>13. Yhteystiedot</h2>
 <p>Sublime Web Oy</p>
 <p>Y-tunnus: FI35258693</p>
 <p><a href="https://sparkmaster.app">https://sparkmaster.app</a></p>
-<p>support@sparkmaster.app</p>
+<p><a href="mailto:support@sparkmaster.app">support@sparkmaster.app</a></p>
     </article>
     <footer class="footer">© 2026 Sparkmaster · Sublime Web Oy · <a href="mailto:support@sparkmaster.app">support@sparkmaster.app</a></footer>
   </main>
