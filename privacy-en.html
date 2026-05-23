@@ -45,7 +45,7 @@ h3{margin:26px 0 8px;font-size:1.08rem;color:#fff}p,li{color:var(--muted);font-s
 <p>Business ID: <strong>FI35258693</strong></p>
 <p>Website: <a href="https://sparkmaster.app">https://sparkmaster.app</a></p>
 <p>Contact: <a href="mailto:support@sparkmaster.app">support@sparkmaster.app</a></p>
-<p>Updated: May 23, 2026</p>
+<p>Updated: May 22, 2026</p>
 <h2>1. Purpose of the app</h2>
 <p>Sparkmaster is a maintenance and service companion for Yamaha and Mercury outboards. The app helps users record engine details, maintenance history, checks, photos and other boating-related notes.</p>
 <p>Sparkmaster is designed primarily as an <strong>offline-first app</strong>. This means that the app’s core data is stored by default on the user’s own device and is not sent to Sublime Web Oy’s servers without a separate user action or consent.</p>
@@ -94,7 +94,7 @@ h3{margin:26px 0 8px;font-size:1.08rem;color:#fff}p,li{color:var(--muted);font-s
 <li>Continuous location history on our servers</li>
 <li>Advertising identifiers for ad networks</li>
 <li>Social media profiles</li>
-<li>Behavioural analytics for marketing</li>
+<li>Behavioural analytics for marketing or advertising</li>
 <li>Full maintenance records, photos or trip routes (unless the user voluntarily sends them by email)</li>
 </ul>
 <p>The app may store an <strong>optional workshop email</strong> locally on the device if the user enters it. The bug-report form does not ask for or store the user’s email in the app; if the user sends mail from their email app, their address may appear to the recipient so we can reply.</p>
@@ -114,6 +114,15 @@ h3{margin:26px 0 8px;font-size:1.08rem;color:#fff}p,li{color:var(--muted);font-s
 <li>Non-personal technical context such as selected engine brand or family (if available)</li>
 </ul>
 <p>Crashlytics is <strong>not</strong> used to collect maintenance notes, photos, trip routes or serial numbers from your records. Debug builds disable Crashlytics collection by default.</p>
+<h3>Firebase Analytics (Google)</h3>
+<p>In release builds with Firebase configured, the app may send <strong>aggregated product analytics</strong> to Google Firebase Analytics to understand how features are used and to improve the app. This is <strong>not</strong> used for advertising or marketing profiles.</p>
+<p>Examples of what may be sent:</p>
+<ul>
+<li>Custom event names when you voluntarily confirm part information or share a fuel-consumption figure with the community flow</li>
+<li>Non-personal parameters such as engine brand, engine model family, part category, trust level, fuel unit, or numeric consumption values you chose to share</li>
+<li>App version and technical context similar to Crashlytics</li>
+</ul>
+<p>Analytics does <strong>not</strong> collect your name, email, serial number, maintenance notes, photos, trip routes or exact location. Debug builds disable Analytics collection by default.</p>
 <p>Firebase / Google privacy information: <a href="https://firebase.google.com/support/privacy">https://firebase.google.com/support/privacy</a></p>
 <h3>Other network use</h3>
 <p>The app may open links in the user’s browser (for example retailer pages) and may download fonts or similar assets needed for the user interface. Those services are not used to build advertising profiles.</p>

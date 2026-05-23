@@ -45,7 +45,7 @@ h3{margin:26px 0 8px;font-size:1.08rem;color:#fff}p,li{color:var(--muted);font-s
 <p>Y-tunnus: <strong>FI35258693</strong></p>
 <p>Verkkosivusto: <a href="https://sparkmaster.app">https://sparkmaster.app</a></p>
 <p>Yhteydenotot: <a href="mailto:support@sparkmaster.app">support@sparkmaster.app</a></p>
-<p>Päivitetty: 23.5.2026</p>
+<p>Päivitetty: 22.5.2026</p>
 <h2>1. Sovelluksen tarkoitus</h2>
 <p>Sparkmaster on Yamaha- ja Mercury-perämoottoreiden huolto- ja ylläpitosovellus. Sovellus auttaa käyttäjää tallentamaan moottorin perustietoja, huoltohistoriaa, tarkistuksia, valokuvia ja muita veneilyyn liittyviä muistiinpanoja.</p>
 <p>Sparkmaster on suunniteltu ensisijaisesti <strong>offline-first-sovellukseksi</strong>. Tämä tarkoittaa, että sovelluksen perustiedot tallennetaan oletuksena käyttäjän omalle laitteelle, eikä niitä lähetetä Sublime Web Oy:n palvelimille ilman käyttäjän erillistä toimintoa tai suostumusta.</p>
@@ -94,7 +94,7 @@ h3{margin:26px 0 8px;font-size:1.08rem;color:#fff}p,li{color:var(--muted);font-s
 <li>Jatkuvaa sijaintihistoriaa palvelimillamme</li>
 <li>Mainostunnisteita mainosverkkoihin</li>
 <li>Sosiaalisen median profiileja</li>
-<li>Käyttäytymisanalytiikkaa markkinointiin</li>
+<li>Käyttäytymisanalytiikkaa markkinointiin tai mainontaan</li>
 <li>Koko huoltohistoriaa, kuvia tai reittidataa (ellei käyttäjä lähetä niitä vapaaehtoisesti sähköpostilla)</li>
 </ul>
 <p>Sovellus voi tallentaa <strong>valinnaisen huoltoliikkeen sähköpostin</strong> paikallisesti laitteelle, jos käyttäjä syöttää sen. Bugiraporttilomake ei pyydä eikä tallenna sähköpostiosoitetta sovelluksessa; jos käyttäjä lähettää viestin omasta sähköpostisovelluksestaan, lähettäjän osoite voi näkyä vastaanottajalle vastausta varten.</p>
@@ -114,6 +114,15 @@ h3{margin:26px 0 8px;font-size:1.08rem;color:#fff}p,li{color:var(--muted);font-s
 <li>Ei-henkilökohtaista teknistä kontekstia, kuten valittu moottorimerkki tai -perhe (jos saatavilla)</li>
 </ul>
 <p>Crashlytics <strong>ei</strong> kerää huoltomerkintöjä, kuvia, reittidataa tai sarjanumeroita tietueistasi. Debug-buildissä Crashlytics-kokoelu on oletuksena pois päältä.</p>
+<h3>Firebase Analytics (Google)</h3>
+<p>Release-versiossa, jossa Firebase on konfiguroitu, sovellus voi lähettää <strong>koostettua tuoteanalytiikkaa</strong> Google Firebase Analyticsiin, jotta ymmärrämme ominaisuuksien käyttöä ja voimme parantaa sovellusta. Tätä <strong>ei</strong> käytetä mainontaan tai markkinointiprofiileihin.</p>
+<p>Esimerkkejä lähetettävästä:</p>
+<ul>
+<li>Mukautettuja tapahtumanimiä, kun vahvistat osatiedot tai jaat polttoainekulutusluvun yhteisövirtaan vapaaehtoisesti</li>
+<li>Ei-henkilökohtaisia parametreja, kuten moottorimerkki, moottoriperhe, osaluokka, luottamustaso, polttoaineyksikkö tai numerollinen kulutus, jonka itse jaat</li>
+<li>Sovellusversiota ja teknistä kontekstia, kuten Crashlyticsissä</li>
+</ul>
+<p>Analytics <strong>ei</strong> kerää nimeä, sähköpostia, sarjanumeroa, huoltomerkintöjä, kuvia, reittidataa tai tarkkaa sijaintia. Debug-buildissä Analytics-kokoelu on oletuksena pois päältä.</p>
 <p>Firebase / Google -tietosuoja: <a href="https://firebase.google.com/support/privacy">https://firebase.google.com/support/privacy</a></p>
 <h3>Muu verkkokäyttö</h3>
 <p>Sovellus voi avata linkkejä käyttäjän selaimeen (esim. jälleenmyyjäsivut) ja ladata fontteja tai vastaavia käyttöliittymäresursseja. Niitä ei käytetä mainosprofiilien rakentamiseen.</p>
