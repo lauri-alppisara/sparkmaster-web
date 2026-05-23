@@ -6,6 +6,8 @@
   <title>Privacy Policy — Sparkmaster</title>
   <meta name="description" content="Privacy Policy — Sparkmaster">
   <link rel="canonical" href="https://sparkmaster.app/privacy-en.html">
+  <link rel="alternate" hreflang="en" href="https://sparkmaster.app/privacy-en.html">
+  <link rel="alternate" hreflang="fi" href="https://sparkmaster.app/privacy-fi.html">
   <link rel="icon" href="assets/app-icon.png">
   <style>
 :root{color-scheme:dark;--bg:#07090d;--text:#f4f4f5;--muted:#b7bcc7;--line:rgba(255,255,255,.12);--accent:#e53e3e}
@@ -21,7 +23,7 @@ h1{margin:0 0 10px;font-size:clamp(2rem,5vw,3.4rem);line-height:1.05;letter-spac
 h2{margin:42px 0 12px;padding-top:18px;border-top:1px solid var(--line);font-size:clamp(1.25rem,2.4vw,1.65rem);line-height:1.2;letter-spacing:-.025em}
 h3{margin:26px 0 8px;font-size:1.08rem;color:#fff}p,li{color:var(--muted);font-size:16px}p{margin:10px 0}ul{margin:12px 0 0;padding-left:22px}li{margin:7px 0}strong{color:#fff;font-weight:700}
 .footer{margin-top:28px;color:rgba(255,255,255,.55);font-size:13px;text-align:center}@media(max-width:640px){.topbar{align-items:flex-start;flex-direction:column}}
-</style>
+  </style>
 </head>
 <body>
   <main class="wrap">
@@ -43,7 +45,7 @@ h3{margin:26px 0 8px;font-size:1.08rem;color:#fff}p,li{color:var(--muted);font-s
 <p>Business ID: <strong>FI35258693</strong></p>
 <p>Website: <a href="https://sparkmaster.app">https://sparkmaster.app</a></p>
 <p>Contact: <a href="mailto:support@sparkmaster.app">support@sparkmaster.app</a></p>
-<p>Updated: May 22, 2026</p>
+<p>Updated: May 23, 2026</p>
 <h2>1. Purpose of the app</h2>
 <p>Sparkmaster is a maintenance and service companion for Yamaha and Mercury outboards. The app helps users record engine details, maintenance history, checks, photos and other boating-related notes.</p>
 <p>Sparkmaster is designed primarily as an <strong>offline-first app</strong>. This means that the app’s core data is stored by default on the user’s own device and is not sent to Sublime Web Oy’s servers without a separate user action or consent.</p>
@@ -59,12 +61,14 @@ h3{margin:26px 0 8px;font-size:1.08rem;color:#fff}p,li{color:var(--muted);font-s
 <li><strong>Photos</strong> added by the user, such as photos of the engine, parts or maintenance steps</li>
 <li><strong>Checklists and service notes</strong></li>
 <li><strong>Trip data</strong>, such as GPS coordinates, route information and time, if the user starts trip tracking</li>
+<li><strong>Optional workshop or service contact details</strong> (for example email), if the user enters them in settings</li>
 <li><strong>Random identifier (UUID)</strong> if the user uses community or contribution features</li>
 </ul>
 <p>By default, this data is stored locally on the user’s device.</p>
 <h3>3.2 Location data</h3>
 <p>Sparkmaster may process location data only if the user uses trip tracking or another location-based feature.</p>
-<p>Location data is processed only based on the user’s own action, such as starting trip tracking. Location data is not collected continuously in the background and is not sent to Sublime Web Oy by default.</p>
+<p>Location data is processed only based on the user’s own action, such as starting trip tracking. Trip points are stored on the device. While tracking is active, location may be read while the app is open or in the background on that device; tracking does not continue after the app is fully closed.</p>
+<p>Location data is not sent to Sublime Web Oy’s servers by default.</p>
 <p>If trip tracking is not enabled, the app does not process location data.</p>
 <h3>3.3 Photos</h3>
 <p>The user may add photos to the app, for example photos of the engine, parts or maintenance steps. By default, photos are stored on the user’s device.</p>
@@ -82,24 +86,38 @@ h3{margin:26px 0 8px;font-size:1.08rem;color:#fff}p,li{color:var(--muted);font-s
 <p>The random identifier (UUID) is not the user’s name or email address, but it may be a persistent technical identifier. Therefore, as a precaution, it is treated as personal data where it can be linked to published content.</p>
 <p>Published community contributions may be licensed under the <strong>Creative Commons Attribution 4.0 International (CC BY 4.0)</strong> license. This means that others may use the published content, provided that the original contribution is credited according to the license terms.</p>
 <p>Before publishing, the user should make sure that the shared content does not contain personal data or other information the user does not want to make public.</p>
-<h2>4. Information we do not collect</h2>
-<p>By default, Sparkmaster does not collect the following on Sublime Web Oy’s servers:</p>
+<h2>4. Information we do not collect on our servers</h2>
+<p>By default, Sparkmaster does not store the following on Sublime Web Oy’s own servers:</p>
 <ul>
+<li>User accounts or passwords</li>
 <li>User’s name</li>
-<li>User’s email address</li>
-<li>User’s contacts</li>
-<li>Continuous location tracking</li>
-<li>Advertising identifiers</li>
+<li>Continuous location history on our servers</li>
+<li>Advertising identifiers for ad networks</li>
 <li>Social media profiles</li>
-<li>Behavioural analytics</li>
-<li>Advertising network tracking data</li>
+<li>Behavioural analytics for marketing</li>
+<li>Full maintenance records, photos or trip routes (unless the user voluntarily sends them by email)</li>
 </ul>
+<p>The app may store an <strong>optional workshop email</strong> locally on the device if the user enters it. The bug-report form does not ask for or store the user’s email in the app; if the user sends mail from their email app, their address may appear to the recipient so we can reply.</p>
 <p>If the user sends a bug report or support request by email, the message content and sender’s email address become visible to Sublime Web Oy.</p>
 <h2>5. Third-party services</h2>
-<p>At launch, Sparkmaster does not use third-party analytics, advertising networks or user tracking.</p>
-<p>Premium features, such as export tools, may be billed through Google Play. Sublime Web Oy does not process users’ payment card or bank details. Payment credentials are handled by Google.</p>
+<p>Sparkmaster does <strong>not</strong> use third-party advertising networks or behavioural analytics for marketing.</p>
+<p>The app may use the following third-party services:</p>
+<h3>Google Play (in-app purchases)</h3>
+<p>Premium features may be purchased through Google Play. Google processes payment and purchase records. Sublime Web Oy does not receive or store payment card or bank details.</p>
 <p>Google payments policy: <a href="https://policies.google.com/payments">https://policies.google.com/payments</a></p>
-<p>If the app later adds analytics, crash reporting, cloud sync, user accounts or other third-party services, this Privacy Policy will be updated before or at the time those changes are introduced.</p>
+<h3>Firebase Crashlytics (Google)</h3>
+<p>In release builds with Firebase configured, the app may send <strong>crash and error diagnostics</strong> to Google Firebase Crashlytics to improve stability. This can include, for example:</p>
+<ul>
+<li>Crash stack traces and error messages</li>
+<li>App version and build number</li>
+<li>Device model and operating system version</li>
+<li>Non-personal technical context such as selected engine brand or family (if available)</li>
+</ul>
+<p>Crashlytics is <strong>not</strong> used to collect maintenance notes, photos, trip routes or serial numbers from your records. Debug builds disable Crashlytics collection by default.</p>
+<p>Firebase / Google privacy information: <a href="https://firebase.google.com/support/privacy">https://firebase.google.com/support/privacy</a></p>
+<h3>Other network use</h3>
+<p>The app may open links in the user’s browser (for example retailer pages) and may download fonts or similar assets needed for the user interface. Those services are not used to build advertising profiles.</p>
+<p>If we add further services (for example cloud sync or user accounts), this Privacy Policy will be updated before or when they are introduced.</p>
 <h2>6. How data is used</h2>
 <p>Data stored in the app is used primarily to allow the user to manage their own engine, maintenance and boating information.</p>
 <p>Sublime Web Oy uses support requests and bug reports received by email only to handle the user’s request, investigate issues and improve the service.</p>
