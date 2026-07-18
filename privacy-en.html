@@ -8,6 +8,13 @@
   <link rel="canonical" href="https://sparkmaster.app/privacy-en.html">
   <link rel="alternate" hreflang="en" href="https://sparkmaster.app/privacy-en.html">
   <link rel="alternate" hreflang="fi" href="https://sparkmaster.app/privacy-fi.html">
+  <link rel="alternate" hreflang="de" href="https://sparkmaster.app/privacy-de.html">
+  <link rel="alternate" hreflang="es" href="https://sparkmaster.app/privacy-es.html">
+  <link rel="alternate" hreflang="fr" href="https://sparkmaster.app/privacy-fr.html">
+  <link rel="alternate" hreflang="sv" href="https://sparkmaster.app/privacy-sv.html">
+  <link rel="alternate" hreflang="ja" href="https://sparkmaster.app/privacy-ja.html">
+  <link rel="alternate" hreflang="ko" href="https://sparkmaster.app/privacy-ko.html">
+  <link rel="alternate" hreflang="x-default" href="https://sparkmaster.app/privacy-en.html">
   <link rel="icon" href="assets/app-icon.png">
   <style>
 :root{color-scheme:dark;--bg:#07090d;--text:#f4f4f5;--muted:#b7bcc7;--line:rgba(255,255,255,.12);--accent:#e53e3e}
@@ -34,7 +41,7 @@ h3{margin:26px 0 8px;font-size:1.08rem;color:#fff}p,li{color:var(--muted);font-s
       </a>
       <nav class="nav" aria-label="Navigation">
         <a href="/">Home</a>
-        <a href="privacy-fi.html">Suomeksi</a>
+        <a href="privacy.html">Languages</a>
         <a href="support.html">Support</a>
       </nav>
     </header>
@@ -45,7 +52,7 @@ h3{margin:26px 0 8px;font-size:1.08rem;color:#fff}p,li{color:var(--muted);font-s
 <p>Business ID: <strong>FI35258693</strong></p>
 <p>Website: <a href="https://sparkmaster.app">https://sparkmaster.app</a></p>
 <p>Contact: <a href="mailto:support@sparkmaster.app">support@sparkmaster.app</a></p>
-<p>Updated: June 15, 2026</p>
+<p>Updated: July 18, 2026</p>
 <h2>1. Purpose of the app</h2>
 <p>Sparkmaster is a maintenance and service companion for outboard motors. The app supports multiple engine brands and helps users record engine details, maintenance history, checks, photos and other boating-related notes.</p>
 <p>Sparkmaster is designed primarily as an <strong>offline-first app</strong>. This means that the app’s core data is stored by default on the user’s own device and is not sent to Sublime Web Oy’s servers without a separate user action or consent.</p>
@@ -60,16 +67,18 @@ h3{margin:26px 0 8px;font-size:1.08rem;color:#fff}p,li{color:var(--muted);font-s
 <li><strong>Maintenance history</strong>, such as completed service work, dates, parts, work steps and personal notes</li>
 <li><strong>Photos</strong> added by the user, such as photos of the engine, parts or maintenance steps</li>
 <li><strong>Checklists and service notes</strong></li>
-<li><strong>Trip data</strong>, such as GPS coordinates, route information and time, if the user starts trip tracking</li>
+<li><strong>Trip data</strong>, such as GPS coordinates, trip duration, engine hours and an optional destination, if the user starts trip tracking manually or enables optional marina auto tracking</li>
+<li><strong>Diagnosis history</strong>, such as troubleshooting results and AI-Mechanic scan summaries the user chooses to save</li>
 <li><strong>Optional workshop or service contact details</strong> (for example email), if the user enters them in settings</li>
 <li><strong>Random identifier (UUID)</strong> if the user uses community or contribution features</li>
 </ul>
 <p>By default, this data is stored locally on the user’s device.</p>
 <h3>3.2 Location data</h3>
-<p>Sparkmaster may process location data only if the user uses trip tracking or another location-based feature.</p>
-<p>Location data is processed only based on the user’s own action, such as starting trip tracking. Trip points are stored on the device. While tracking is active, location may be read while the app is open or in the background on that device; tracking does not continue after the app is fully closed.</p>
-<p>Location data is not sent to Sublime Web Oy’s servers by default.</p>
-<p>If trip tracking is not enabled, the app does not process location data.</p>
+<p>Sparkmaster may process location data only if the user uses trip tracking or enables optional marina auto tracking.</p>
+<p><strong>Manual trip tracking:</strong> The user starts a trip themselves. While a trip is active, the app logs sparse GPS points to calculate engine hours and trip duration. A persistent notification (foreground service) is shown during the trip. Location may also be read while the screen is off, but only for the duration of an active trip. Route points are stored on the device.</p>
+<p><strong>Marina auto tracking (optional):</strong> The user may separately enable a geofence around their home marina (Trips → Marina auto tracking). When the user leaves the defined marina area, a trip may start automatically; when they return, the trip may end. This uses Android geofencing, which may require background location permission (<code>ACCESS_BACKGROUND_LOCATION</code>) for reliable operation when the app is closed or the screen is off. This feature is off by default.</p>
+<p><strong>Permissions and choices:</strong> Location permissions are requested only after the user has seen an in-app explanation. Background location is requested only for marina auto tracking. The user may deny permission or revoke it at any time in device settings.</p>
+<p>Location data is not sent to Sublime Web Oy’s servers by default. If trip tracking and marina auto tracking are not used, the app does not process location data.</p>
 <h3>3.3 Photos</h3>
 <p>The user may add photos to the app, for example photos of the engine, parts or maintenance steps. By default, photos are stored on the user’s device.</p>
 <p>If the user later shares a photo through a community feature or sends it with a bug report, the user is responsible for ensuring that the photo does not contain personal data, registration numbers, faces, location details or other content the user does not want to share.</p>
@@ -86,6 +95,10 @@ h3{margin:26px 0 8px;font-size:1.08rem;color:#fff}p,li{color:var(--muted);font-s
 <p>The random identifier (UUID) is not the user’s name or email address, but it may be a persistent technical identifier. Therefore, as a precaution, it is treated as personal data where it can be linked to published content.</p>
 <p>Published community contributions may be licensed under the <strong>Creative Commons Attribution 4.0 International (CC BY 4.0)</strong> license. This means that others may use the published content, provided that the original contribution is credited according to the license terms.</p>
 <p>Before publishing, the user should make sure that the shared content does not contain personal data or other information the user does not want to make public.</p>
+<h3>3.5 AI-Mechanic and on-device AI</h3>
+<p>If the user enables AI-Mechanic, Sparkmaster may process symptom answers, selected photos, short engine-audio samples, RPM measurements and a minimized summary of engine and maintenance data. AI inference runs locally on the user’s device. This content is not sent to Sublime Web Oy or an AI provider.</p>
+<p>Raw photos and audio used for a scan are deleted after analysis by default. The user may separately choose to retain a healthy-engine baseline or save a result into the local diagnosis history on the device. AI chat messages are kept only for the current session and are cleared when the user leaves the chat. The downloadable AI model is stored locally and can be removed in app settings. A shared Engine Health Passport is created only after user confirmation and excludes serial number, exact location, raw media and free-form notes by default.</p>
+<p>AI-Mechanic provides decision support, not a guaranteed diagnosis. Safety-critical warnings use fixed app rules in addition to AI output. The user must verify maintenance and safety instructions against the official engine documentation.</p>
 <h2>4. Information we do not collect on our servers</h2>
 <p>By default, Sparkmaster does not store the following on Sublime Web Oy’s own servers:</p>
 <ul>
@@ -113,7 +126,7 @@ h3{margin:26px 0 8px;font-size:1.08rem;color:#fff}p,li{color:var(--muted);font-s
 <li>Device model and operating system version</li>
 <li>Non-personal technical context such as selected engine brand or family (if available)</li>
 </ul>
-<p>Crashlytics is <strong>not</strong> used to collect maintenance notes, photos, trip routes or serial numbers from your records. Debug builds disable Crashlytics collection by default.</p>
+<p>Crashlytics is <strong>not</strong> used to collect maintenance notes, photos, trip routes or serial numbers from your records. You can turn off crash reporting in app settings (Settings → Share anonymous usage data). Debug builds always disable collection.</p>
 <h3>Firebase Analytics (Google)</h3>
 <p>In release builds with Firebase configured, the app may send <strong>aggregated product analytics</strong> to Google Firebase Analytics to understand how features are used and to improve the app. This is <strong>not</strong> used for advertising or marketing profiles.</p>
 <p>Examples of what may be sent:</p>
@@ -122,7 +135,7 @@ h3{margin:26px 0 8px;font-size:1.08rem;color:#fff}p,li{color:var(--muted);font-s
 <li>Non-personal parameters such as engine brand, engine model family, part category, trust level, fuel unit, or numeric consumption values you chose to share</li>
 <li>App version and technical context similar to Crashlytics</li>
 </ul>
-<p>Analytics does <strong>not</strong> collect your name, email, serial number, maintenance notes, photos, trip routes or exact location. Debug builds disable Analytics collection by default.</p>
+<p>Analytics does <strong>not</strong> collect your name, email, serial number, maintenance notes, photos, trip routes or exact location. You can turn off analytics in app settings (Settings → Share anonymous usage data). Debug builds always disable collection.</p>
 <p>Firebase / Google privacy information: <a href="https://firebase.google.com/support/privacy">https://firebase.google.com/support/privacy</a></p>
 <h3>Other network use</h3>
 <p>The app may open links in the user’s browser (for example retailer pages) and may download fonts or similar assets needed for the user interface. Those services are not used to build advertising profiles.</p>

@@ -1,14 +1,14 @@
 <!doctype html>
-<html lang="fi">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sparkmaster — Master your outboard</title>
-  <meta name="description" content="Sparkmaster is a mobile app for outboard maintenance. Available on Google Play for Android. iOS later.">
+  <meta name="description" content="Sparkmaster is an offline-first outboard companion: maintenance, trips, troubleshooting, RPM tools and experimental on-device AI-Mechanic. On Google Play for Android.">
   <link rel="canonical" href="https://sparkmaster.app/">
   <link rel="icon" type="image/png" href="assets/app-icon.png">
   <meta property="og:title" content="Sparkmaster — Master your outboard">
-  <meta property="og:description" content="A mobile app for outboard maintenance. Available on Google Play. iOS later.">
+  <meta property="og:description" content="Offline-first outboard maintenance companion with trips, diagnostics and experimental on-device AI-Mechanic. Available on Google Play.">
   <meta property="og:url" content="https://sparkmaster.app/">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://sparkmaster.app/assets/logo-landscape.png">
@@ -16,7 +16,6 @@
   <style>
     :root {
       --bg: #05070c;
-      --bg-2: #0a0d14;
       --card: rgba(255,255,255,0.045);
       --card-border: rgba(255,255,255,0.10);
       --text: #f6f7fb;
@@ -26,7 +25,6 @@
       --red-soft: rgba(239,36,40,0.22);
       --max: 1120px;
     }
-
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
@@ -38,162 +36,90 @@
     }
     a { color: inherit; }
     img { max-width: 100%; height: auto; display: block; }
-
     .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 10;
+      position: sticky; top: 0; z-index: 10;
       backdrop-filter: blur(18px);
       background: rgba(5,7,12,0.78);
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
     .topbar-inner {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 12px 22px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
+      max-width: var(--max); margin: 0 auto; padding: 12px 22px;
+      display: flex; align-items: center; justify-content: space-between; gap: 14px;
     }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-    }
+    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 800; }
     .brand img { width: 34px; height: 34px; border-radius: 8px; }
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      color: var(--muted);
-      font-size: 14px;
-    }
+    .nav { display: flex; align-items: center; gap: 12px; color: var(--muted); font-size: 14px; flex-wrap: wrap; justify-content: flex-end; }
     .nav a { text-decoration: none; }
     .nav a:hover { color: var(--text); }
     .lang {
-      display: inline-flex;
-      gap: 4px;
-      padding: 4px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 999px;
+      display: inline-flex; flex-wrap: wrap; gap: 3px; padding: 4px;
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); border-radius: 999px;
+      max-width: min(100%, 420px); justify-content: flex-end;
     }
     .lang button {
-      border: 0;
-      border-radius: 999px;
-      padding: 5px 10px;
-      background: transparent;
-      color: var(--muted);
-      cursor: pointer;
-      font: inherit;
-      font-size: 12px;
-      font-weight: 700;
+      border: 0; border-radius: 999px; padding: 5px 8px; background: transparent;
+      color: var(--muted); cursor: pointer; font: inherit; font-size: 11px; font-weight: 700;
     }
     .lang button.active { background: var(--red); color: #fff; }
-
     .container { max-width: var(--max); margin: 0 auto; padding: 0 22px; }
-    .hero { padding: 72px 0 54px; text-align: center; }
+    .hero { padding: 64px 0 48px; text-align: center; }
     .hero-logo {
-      width: min(980px, 96vw);
-      margin: 0 auto 22px;
+      width: min(980px, 96vw); margin: 0 auto 22px;
       filter: drop-shadow(0 0 34px rgba(239,36,40,0.20));
     }
-    .hero-copy { max-width: 700px; margin: 0 auto; }
+    .hero-copy { max-width: 760px; margin: 0 auto; }
     h1 {
-      margin: 0 0 14px;
-      font-size: clamp(34px, 6vw, 68px);
-      line-height: 1.02;
-      letter-spacing: -0.055em;
+      margin: 0 0 14px; font-size: clamp(32px, 5.6vw, 64px);
+      line-height: 1.02; letter-spacing: -0.055em;
     }
     .lead {
-      margin: 0 auto 28px;
-      color: var(--muted);
-      font-size: clamp(17px, 2.2vw, 22px);
-      max-width: 700px;
+      margin: 0 auto 22px; color: var(--muted);
+      font-size: clamp(16px, 2.1vw, 21px); max-width: 720px;
     }
-    .badges {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 26px;
+    .pill {
+      display: inline-block; margin-bottom: 16px; padding: 6px 12px; border-radius: 999px;
+      border: 1px solid rgba(239,36,40,0.45); background: rgba(239,36,40,0.12);
+      color: #ffd3d4; font-size: 12px; font-weight: 700; letter-spacing: 0.02em;
     }
-    .play-badge {
-      display: inline-block;
-      border-radius: 8px;
-      transition: transform 0.18s ease, filter 0.18s ease;
-    }
+    .badges { display: flex; justify-content: center; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 22px; }
+    .play-badge { display: inline-block; border-radius: 8px; transition: transform 0.18s ease, filter 0.18s ease; }
     .play-badge:hover { transform: translateY(-1px); filter: brightness(1.08); }
     .play-badge img { height: 54px; width: auto; }
-    .note { margin-top: 14px; color: var(--dim); font-size: 14px; }
-
-    section { padding: 70px 0; }
+    .note { margin-top: 12px; color: var(--dim); font-size: 14px; }
+    section { padding: 64px 0; }
     .section-title {
-      margin: 0 0 30px;
-      text-align: center;
-      font-size: clamp(28px, 4vw, 42px);
-      line-height: 1.1;
-      letter-spacing: -0.04em;
+      margin: 0 0 14px; text-align: center;
+      font-size: clamp(26px, 3.8vw, 40px); line-height: 1.1; letter-spacing: -0.04em;
     }
     .section-lead {
-      max-width: 720px;
-      margin: -16px auto 34px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 18px;
+      max-width: 740px; margin: 0 auto 30px; text-align: center;
+      color: var(--muted); font-size: 17px;
     }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-    }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
     .card {
-      padding: 24px;
-      border: 1px solid var(--card-border);
+      padding: 22px; border: 1px solid var(--card-border);
       background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.025));
-      border-radius: 22px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.24);
+      border-radius: 22px; box-shadow: 0 20px 60px rgba(0,0,0,0.24);
     }
-    .card h3 { margin: 0 0 8px; font-size: 20px; letter-spacing: -0.02em; }
-    .card p { margin: 0; color: var(--muted); }
-    .accent { color: var(--red); }
-
-    .split {
-      display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      align-items: center;
-      gap: 32px;
+    .card h3 { margin: 0 0 8px; font-size: 18px; letter-spacing: -0.02em; }
+    .card p { margin: 0; color: var(--muted); font-size: 15px; }
+    .card .tag {
+      display: inline-block; margin-bottom: 8px; font-size: 11px; font-weight: 800;
+      color: #ffb4b6; text-transform: uppercase; letter-spacing: 0.04em;
     }
+    .split { display: grid; grid-template-columns: 1.08fr 0.92fr; align-items: center; gap: 32px; }
     .phone-card {
-      padding: 20px;
-      border: 1px solid var(--card-border);
+      padding: 20px; border: 1px solid var(--card-border);
       background: radial-gradient(circle at 50% 0%, rgba(239,36,40,0.18), rgba(255,255,255,0.03) 48%, rgba(255,255,255,0.02));
       border-radius: 30px;
     }
     .phone-card img { border-radius: 22px; margin: 0 auto; max-height: 620px; object-fit: contain; }
-    .checklist { list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 12px; }
-    .checklist li {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      color: var(--muted);
-    }
+    .checklist { list-style: none; padding: 0; margin: 22px 0 0; display: grid; gap: 12px; }
+    .checklist li { display: flex; gap: 12px; align-items: flex-start; color: var(--muted); }
     .checklist li::before {
-      content: "";
-      width: 9px;
-      height: 9px;
-      flex: 0 0 auto;
-      margin-top: 8px;
-      border-radius: 999px;
-      background: var(--red);
-      box-shadow: 0 0 18px var(--red-soft);
+      content: ""; width: 9px; height: 9px; flex: 0 0 auto; margin-top: 8px;
+      border-radius: 999px; background: var(--red); box-shadow: 0 0 18px var(--red-soft);
     }
-
     .cta {
       text-align: center;
       border-top: 1px solid rgba(255,255,255,0.08);
@@ -201,37 +127,24 @@
       background: linear-gradient(90deg, transparent, rgba(239,36,40,0.09), transparent);
     }
     .cta .app-icon { width: 92px; height: 92px; border-radius: 22px; margin: 0 auto 22px; }
-
-    .footer {
-      padding: 34px 0;
-      color: var(--dim);
-      font-size: 14px;
-    }
+    .footer { padding: 34px 0; color: var(--dim); font-size: 14px; }
     .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 18px;
-      flex-wrap: wrap;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      padding-top: 24px;
+      display: flex; justify-content: space-between; align-items: center; gap: 18px; flex-wrap: wrap;
+      border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px;
     }
     .footer-links { display: flex; gap: 16px; flex-wrap: wrap; }
     .footer a { color: var(--muted); text-decoration: none; }
     .footer a:hover { color: var(--text); }
-
-    [data-lang-content] { display: none; }
-    [data-lang-content].active { display: block; }
-    [data-lang-inline] { display: none; }
-    [data-lang-inline].active { display: inline; }
-
-    @media (max-width: 820px) {
-      .nav a { display: none; }
-      .hero { padding-top: 46px; }
+    .left { text-align: left; }
+    .left .section-title { text-align: left; }
+    .left .section-lead, .left .lead { margin-left: 0; text-align: left; }
+    @media (max-width: 900px) {
+      .nav-link { display: none; }
+      .hero { padding-top: 40px; }
       .grid, .split { grid-template-columns: 1fr; }
-      .split { gap: 22px; }
       .play-badge img { height: 48px; }
-      section { padding: 54px 0; }
+      section { padding: 50px 0; }
+      .lang { max-width: 100%; justify-content: center; }
     }
   </style>
 </head>
@@ -241,13 +154,11 @@
       <a class="brand" href="/" aria-label="Sparkmaster home">
         <img src="assets/app-icon.png" alt="" width="34" height="34">
       </a>
-      <nav class="nav" aria-label="Main navigation">
-        <a href="#features"><span data-lang-inline="fi" class="active">Ominaisuudet</span><span data-lang-inline="en">Features</span></a>
-        <a href="#support">Support</a>
-        <div class="lang" aria-label="Language selection">
-          <button class="active" type="button" data-set-lang="fi">FI</button>
-          <button type="button" data-set-lang="en">EN</button>
-        </div>
+      <nav class="nav" aria-label="Main">
+        <a class="nav-link" href="#features" data-i18n="navFeatures">Features</a>
+        <a class="nav-link" href="#ai" data-i18n="navAi">AI-Mechanic</a>
+        <a href="#support" data-i18n="navSupport">Support</a>
+        <div class="lang" id="lang-switch" aria-label="Language"></div>
       </nav>
     </div>
   </header>
@@ -259,101 +170,64 @@
           <source media="(min-width: 760px)" srcset="assets/logo-landscape.png">
           <img class="hero-logo" src="assets/logo-vertical.png" alt="Sparkmaster — Master your outboard">
         </picture>
-
-        <div data-lang-content="fi" class="hero-copy active">
-          <h1>Huolla perämoottorisi varmemmin.</h1>
-          <p class="lead">Sparkmaster on mobiilisovellus perämoottorin huoltojen, tarkistusten ja muistiinpanojen hallintaan. Saatavilla Google Playssa — iOS-versio suunnitteilla myöhemmin.</p>
+        <div class="hero-copy">
+          <div class="pill" data-i18n="pill">Android on Google Play · iOS later</div>
+          <h1 data-i18n="heroTitle">Master your outboard.</h1>
+          <p class="lead" data-i18n="heroLead">Offline-first companion for maintenance, trips, diagnostics and tools — with experimental on-device AI-Mechanic in Premium.</p>
           <div class="badges">
-            <a href="https://play.google.com/store/apps/details?id=app.sparkmaster.mobile" class="play-badge" rel="noopener noreferrer" target="_blank">
-              <img src="https://raw.githubusercontent.com/lauri-alppisara/sparkmaster-web/main/GetItOnGooglePlay_Badge_Web_color_Finnish.svg" alt="Lataa Google Playsta">
+            <a id="play-link" href="https://play.google.com/store/apps/details?id=app.sparkmaster.mobile" class="play-badge" rel="noopener noreferrer" target="_blank">
+              <img id="play-badge-img" src="GetItOnGooglePlay_Badge_Web_color_English.svg" alt="Get it on Google Play">
             </a>
           </div>
-        </div>
-
-        <div data-lang-content="en" class="hero-copy">
-          <h1>Master your outboard.</h1>
-          <p class="lead">Sparkmaster is a mobile app for managing outboard maintenance, checks and service notes. Available on Google Play — iOS planned later.</p>
-          <div class="badges">
-            <a href="https://play.google.com/store/apps/details?id=app.sparkmaster.mobile" class="play-badge" rel="noopener noreferrer" target="_blank">
-              <img src="https://raw.githubusercontent.com/lauri-alppisara/sparkmaster-web/main/GetItOnGooglePlay_Badge_Web_color_English.svg" alt="Get it on Google Play">
-            </a>
-          </div>
+          <p class="note" data-i18n="heroNote">Works without a marina Wi‑Fi. Your service records stay on your phone by default.</p>
         </div>
       </div>
     </section>
 
     <section id="features">
       <div class="container">
-        <div data-lang-content="fi" class="active">
-          <h2 class="section-title">Yksi paikka huoltotiedoille.</h2>
-          <p class="section-lead">Pidä veneen tärkeät huoltotiedot, tarkistukset ja havainnot helposti mukana.</p>
-          <div class="grid">
-            <article class="card"><h3>Huoltomuistiinpanot</h3><p>Tallenna tehdyt huollot, päivämäärät, tunnit ja omat havainnot.</p></article>
-            <article class="card"><h3>Tarkistuslistat</h3><p>Muista tärkeimmät kausihuollot, käynnistystä edeltävät tarkistukset ja jälkitoimet.</p></article>
-            <article class="card"><h3>Offline ensin</h3><p>Käytä sovellusta myös satamassa, mökillä tai vesillä ilman luotettavaa yhteyttä.</p></article>
-          </div>
-        </div>
+        <h2 class="section-title" data-i18n="featuresTitle">Built for real outboard work.</h2>
+        <p class="section-lead" data-i18n="featuresLead">Everything you need between the workshop, the trailer and the water — without cloud lock-in.</p>
+        <div class="grid" id="feature-grid"></div>
+      </div>
+    </section>
 
-        <div data-lang-content="en">
-          <h2 class="section-title">One place for service records.</h2>
-          <p class="section-lead">Keep your outboard maintenance notes, checks and observations with you.</p>
-          <div class="grid">
-            <article class="card"><h3>Service notes</h3><p>Save completed work, dates, engine hours and your own observations.</p></article>
-            <article class="card"><h3>Checklists</h3><p>Stay on top of seasonal service, pre-start checks and post-run tasks.</p></article>
-            <article class="card"><h3>Offline first</h3><p>Use the app at the marina, cabin or on the water without a reliable connection.</p></article>
-          </div>
+    <section id="ai">
+      <div class="container split">
+        <div class="left">
+          <div class="pill" data-i18n="aiPill">Experimental · Beta</div>
+          <h2 class="section-title" data-i18n="aiTitle">AI-Mechanic on your device.</h2>
+          <p class="lead" data-i18n="aiLead">Ask guided questions, attach a photo or sound sample, and get source-grounded suggestions — without sending engine media to an AI cloud.</p>
+          <ul class="checklist">
+            <li data-i18n="aiLi1">Included with Sparkmaster Premium (one subscription).</li>
+            <li data-i18n="aiLi2">On-device model download; inference stays local.</li>
+            <li data-i18n="aiLi3">Guided scan + chat for your selected engine.</li>
+            <li data-i18n="aiLi4">Decision support only — always verify against the official manual.</li>
+          </ul>
+        </div>
+        <div class="phone-card">
+          <img src="assets/logo-vertical.png" alt="Sparkmaster">
         </div>
       </div>
     </section>
 
     <section>
-      <div class="container split">
-        <div>
-          <div data-lang-content="fi" class="active">
-            <h2 class="section-title" style="text-align:left">Rakennettu käytännön veneilyyn.</h2>
-            <p class="lead" style="margin-left:0">Sparkmaster auttaa tekemään huollosta järjestelmällisempää ilman raskasta kirjanpitoa.</p>
-            <ul class="checklist">
-              <li>Perämoottoreille suunniteltu huolto-ohjeistus.</li>
-              <li>Nopea käyttää puhelimella huoltotilanteessa.</li>
-              <li>Tiedot pysyvät omassa laitteessa, ellei myöhemmin lisätä erillisiä synkronointiominaisuuksia.</li>
-            </ul>
-          </div>
-          <div data-lang-content="en">
-            <h2 class="section-title" style="text-align:left">Built for practical boating.</h2>
-            <p class="lead" style="margin-left:0">Sparkmaster helps make maintenance more systematic without heavy record keeping.</p>
-            <ul class="checklist">
-              <li>Maintenance workflow designed for outboards.</li>
-              <li>Fast to use on your phone during service work.</li>
-              <li>Data stays on your device unless optional sync features are added later.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="phone-card">
-          <img src="assets/logo-vertical.png" alt="Sparkmaster logo and slogan">
-        </div>
+      <div class="container">
+        <h2 class="section-title" data-i18n="premiumTitle">Sparkmaster Premium</h2>
+        <p class="section-lead" data-i18n="premiumLead">Unlock the full toolkit — including experimental AI-Mechanic — with a single Premium plan.</p>
+        <div class="grid" id="premium-grid"></div>
       </div>
     </section>
 
     <section class="cta" id="support">
       <div class="container">
         <img class="app-icon" src="assets/app-icon.png" alt="Sparkmaster app icon">
-        <div data-lang-content="fi" class="active">
-          <h2 class="section-title">Lataa Sparkmaster Androidille.</h2>
-          <p class="section-lead">Sovellus on saatavilla Google Playssa. iOS-versio on suunnitteilla myöhemmin. Tukipyynnöt ja yhteydenotot: <a href="mailto:support@sparkmaster.app">support@sparkmaster.app</a></p>
-          <div class="badges">
-            <a href="https://play.google.com/store/apps/details?id=app.sparkmaster.mobile" class="play-badge" rel="noopener noreferrer" target="_blank">
-              <img src="https://raw.githubusercontent.com/lauri-alppisara/sparkmaster-web/main/GetItOnGooglePlay_Badge_Web_color_Finnish.svg" alt="Lataa Google Playsta">
-            </a>
-          </div>
-        </div>
-        <div data-lang-content="en">
-          <h2 class="section-title">Get Sparkmaster on Android.</h2>
-          <p class="section-lead">The app is available on Google Play. iOS is planned later. For support and contact: <a href="mailto:support@sparkmaster.app">support@sparkmaster.app</a></p>
-          <div class="badges">
-            <a href="https://play.google.com/store/apps/details?id=app.sparkmaster.mobile" class="play-badge" rel="noopener noreferrer" target="_blank">
-              <img src="https://raw.githubusercontent.com/lauri-alppisara/sparkmaster-web/main/GetItOnGooglePlay_Badge_Web_color_English.svg" alt="Get it on Google Play">
-            </a>
-          </div>
+        <h2 class="section-title" data-i18n="ctaTitle">Get Sparkmaster on Android.</h2>
+        <p class="section-lead" data-i18n="ctaLead">Available on Google Play. iOS is planned later. Support: support@sparkmaster.app</p>
+        <div class="badges">
+          <a href="https://play.google.com/store/apps/details?id=app.sparkmaster.mobile" class="play-badge" rel="noopener noreferrer" target="_blank">
+            <img id="play-badge-img-cta" src="GetItOnGooglePlay_Badge_Web_color_English.svg" alt="Get it on Google Play">
+          </a>
         </div>
       </div>
     </section>
@@ -361,10 +235,10 @@
 
   <footer class="footer">
     <div class="container footer-inner">
-      <div>© 2026 Sparkmaster</div>
+      <div>© 2026 Sparkmaster · Sublime Web Oy</div>
       <div class="footer-links">
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="support.html">Support</a>
+        <a href="privacy.html?chooser=1" data-i18n="footerPrivacy">Privacy Policy</a>
+        <a href="support.html" data-i18n="footerSupport">Support</a>
         <a href="https://play.google.com/store/apps/details?id=app.sparkmaster.mobile" rel="noopener noreferrer" target="_blank">Google Play</a>
         <a href="mailto:support@sparkmaster.app">support@sparkmaster.app</a>
       </div>
@@ -372,30 +246,349 @@
   </footer>
 
   <script>
+    var LANGS = [
+      { id: 'en', label: 'EN', badge: 'GetItOnGooglePlay_Badge_Web_color_English.svg' },
+      { id: 'fi', label: 'FI', badge: 'GetItOnGooglePlay_Badge_Web_color_Finnish.svg' },
+      { id: 'de', label: 'DE', badge: 'GetItOnGooglePlay_Badge_Web_color_English.svg' },
+      { id: 'es', label: 'ES', badge: 'GetItOnGooglePlay_Badge_Web_color_English.svg' },
+      { id: 'fr', label: 'FR', badge: 'GetItOnGooglePlay_Badge_Web_color_English.svg' },
+      { id: 'sv', label: 'SV', badge: 'GetItOnGooglePlay_Badge_Web_color_English.svg' },
+      { id: 'ja', label: 'JA', badge: 'GetItOnGooglePlay_Badge_Web_color_English.svg' },
+      { id: 'ko', label: 'KO', badge: 'GetItOnGooglePlay_Badge_Web_color_English.svg' }
+    ];
+
+    var T = {
+      en: {
+        navFeatures: 'Features', navAi: 'AI-Mechanic', navSupport: 'Support',
+        pill: 'Android on Google Play · iOS later',
+        heroTitle: 'Master your outboard.',
+        heroLead: 'Offline-first companion for maintenance, trips, diagnostics and tools — with experimental on-device AI-Mechanic in Premium.',
+        heroNote: 'Works without marina Wi‑Fi. Service records stay on your phone by default.',
+        featuresTitle: 'Built for real outboard work.',
+        featuresLead: 'Everything between the workshop, the trailer and the water — without cloud lock-in.',
+        features: [
+          { t: 'Maintenance & hours', d: 'Jobs, intervals, parts and history tuned for outboards — keep hours and service dates in one place.' },
+          { t: 'Trips & marina auto', d: 'Track trips for engine hours. Optional marina geofence can start/stop trips automatically.' },
+          { t: 'Troubleshooting trees', d: 'Guided fault trees and diagnosis history when something feels off at the dock.' },
+          { t: 'RPM meter', d: 'Acoustic idle RPM measurement to support setup and diagnostics.' },
+          { t: 'Seasonal & pre-trip', d: 'Spring/winter and pre-trip checklists so you do not skip the boring-but-critical steps.' },
+          { t: 'Offline first', d: 'Core workflows work without a connection. Sync is not required to use the app.' }
+        ],
+        aiPill: 'Experimental · Beta',
+        aiTitle: 'AI-Mechanic on your device.',
+        aiLead: 'Guided symptoms, a photo or sound sample, and source-grounded suggestions — without uploading engine media to an AI cloud.',
+        aiLi1: 'Included with Sparkmaster Premium (one subscription).',
+        aiLi2: 'Download a local model; inference stays on the device.',
+        aiLi3: 'Guided scan and chat scoped to your selected engine.',
+        aiLi4: 'Decision support only — always verify against the official manual.',
+        premiumTitle: 'Sparkmaster Premium',
+        premiumLead: 'One plan for the full toolkit — including experimental AI-Mechanic.',
+        premium: [
+          { tag: 'Premium', t: 'Full history & analytics', d: 'Unlimited trip history, fuel insights, PDF reports and multiple engines.' },
+          { tag: 'Premium', t: 'AI-Mechanic (beta)', d: 'On-device guided diagnosis and chat with local grounding and safety rules.' },
+          { tag: 'Free core', t: 'Start free', d: 'Log engines, maintenance and basics before you upgrade.' }
+        ],
+        ctaTitle: 'Get Sparkmaster on Android.',
+        ctaLead: 'On Google Play now. iOS later. Support: support@sparkmaster.app',
+        footerPrivacy: 'Privacy Policy', footerSupport: 'Support',
+        metaDesc: 'Offline-first outboard companion: maintenance, trips, diagnostics and experimental on-device AI-Mechanic. On Google Play.'
+      },
+      fi: {
+        navFeatures: 'Ominaisuudet', navAi: 'AI-Mechanic', navSupport: 'Tuki',
+        pill: 'Android Google Playssa · iOS myöhemmin',
+        heroTitle: 'Hallitse perämoottorisi.',
+        heroLead: 'Offline-first -kumppani huoltoon, matkoihin, vianetsintään ja työkaluihin — Premiumissa kokeellinen, laitteella toimiva AI-Mechanic.',
+        heroNote: 'Toimii ilman sataman Wi‑Fiä. Huoltotiedot pysyvät oletuksena puhelimessasi.',
+        featuresTitle: 'Rakennettu oikeaan veneilyyn.',
+        featuresLead: 'Työpajasta traileriin ja vesille — ilman pilvilukkoa.',
+        features: [
+          { t: 'Huolto & tunnit', d: 'Työt, intervallit, osat ja historia perämoottoreille — tunnit ja päivämäärät yhdessä paikassa.' },
+          { t: 'Matkat & marina-auto', d: 'Kirjaa matkat tuntien seurantaan. Valinnainen marina-geofence voi aloittaa/lopettaa matkan.' },
+          { t: 'Vianetsintäpuut', d: 'Ohjatut vikapuut ja diagnoosihistoria, kun jokin tuntuu väärältä laiturilla.' },
+          { t: 'RPM-mittari', d: 'Akustinen tyhjäkäynnin kierroslukumittaus säätöön ja diagnostiikkaan.' },
+          { t: 'Kausi & lähtötarkistus', d: 'Kevät/talvi- ja lähtötarkistuslistat, jotta kriittiset vaiheet eivät unohdu.' },
+          { t: 'Offline ensin', d: 'Ydintoiminnot toimivat ilman verkkoa. Synkronointia ei tarvita käyttöön.' }
+        ],
+        aiPill: 'Kokeellinen · Beta',
+        aiTitle: 'AI-Mechanic omalla laitteella.',
+        aiLead: 'Ohjatut oireet, kuva tai ääninäyte ja lähteistetyt ehdotukset — ilman moottorimedian lähettämistä AI-pilveen.',
+        aiLi1: 'Sisältyy Sparkmaster Premiumiin (yksi tilaus).',
+        aiLi2: 'Lataa paikallinen malli; päättely pysyy laitteella.',
+        aiLi3: 'Ohjattu skannaus ja chat valitulle moottorille.',
+        aiLi4: 'Vain päätöksenteon tuki — vahvista aina virallisesta ohjekirjasta.',
+        premiumTitle: 'Sparkmaster Premium',
+        premiumLead: 'Yksi tilaus koko työkalupakille — mukana kokeellinen AI-Mechanic.',
+        premium: [
+          { tag: 'Premium', t: 'Historia & analytiikka', d: 'Rajoittamaton matkahistoria, polttoainenäkymät, PDF-raportit ja useampi moottori.' },
+          { tag: 'Premium', t: 'AI-Mechanic (beta)', d: 'Laitteella toimiva ohjattu diagnoosi ja chat paikallisilla lähteillä ja turvasäännöillä.' },
+          { tag: 'Ilmainen ydin', t: 'Aloita ilmaiseksi', d: 'Kirjaa moottorit, huollot ja perustoiminnot ennen päivitystä.' }
+        ],
+        ctaTitle: 'Lataa Sparkmaster Androidille.',
+        ctaLead: 'Google Playssa nyt. iOS myöhemmin. Tuki: support@sparkmaster.app',
+        footerPrivacy: 'Tietosuoja', footerSupport: 'Tuki',
+        metaDesc: 'Offline-first perämoottorikumppani: huolto, matkat, vianetsintä ja kokeellinen AI-Mechanic. Google Playssa.'
+      },
+      de: {
+        navFeatures: 'Funktionen', navAi: 'AI-Mechanic', navSupport: 'Support',
+        pill: 'Android bei Google Play · iOS später',
+        heroTitle: 'Dein Außenborder im Griff.',
+        heroLead: 'Offline-first Begleiter für Wartung, Fahrten, Diagnose und Tools — mit experimentellem On-Device-AI-Mechanic in Premium.',
+        heroNote: 'Funktioniert ohne Marina-WLAN. Servicedaten bleiben standardmäßig auf dem Telefon.',
+        featuresTitle: 'Für echte Bootsarbeit gebaut.',
+        featuresLead: 'Von der Werkstatt zum Trailer und aufs Wasser — ohne Cloud-Zwang.',
+        features: [
+          { t: 'Wartung & Stunden', d: 'Jobs, Intervalle, Teile und Historie für Außenborder.' },
+          { t: 'Fahrten & Marina-Auto', d: 'Fahrten für Betriebsstunden. Optionaler Marina-Geofence startet/stoppt Fahrten.' },
+          { t: 'Fehlerbäume', d: 'Geführte Diagnosebäume und Historie am Steg.' },
+          { t: 'Drehzahlmesser', d: 'Akustische Leerlauf-RPM-Messung für Setup und Diagnose.' },
+          { t: 'Saison & Pre-Trip', d: 'Checklisten für Frühjahr/Winter und vor dem Ablegen.' },
+          { t: 'Offline first', d: 'Kernfunktionen ohne Netz. Sync ist nicht nötig.' }
+        ],
+        aiPill: 'Experimentell · Beta',
+        aiTitle: 'AI-Mechanic auf dem Gerät.',
+        aiLead: 'Geführte Symptome, Foto oder Sound — quellengestützte Tipps ohne Upload in eine KI-Cloud.',
+        aiLi1: 'In Sparkmaster Premium enthalten (ein Abo).',
+        aiLi2: 'Lokales Modell; Inferenz bleibt auf dem Gerät.',
+        aiLi3: 'Geführter Scan und Chat für Ihren Motor.',
+        aiLi4: 'Nur Entscheidungshilfe — immer im Handbuch prüfen.',
+        premiumTitle: 'Sparkmaster Premium',
+        premiumLead: 'Ein Plan für das volle Toolkit — inkl. experimentellem AI-Mechanic.',
+        premium: [
+          { tag: 'Premium', t: 'Historie & Analytics', d: 'Unbegrenzte Fahrtenhistorie, Kraftstoffanalysen, PDF und mehrere Motoren.' },
+          { tag: 'Premium', t: 'AI-Mechanic (Beta)', d: 'On-Device-Diagnose und Chat mit lokaler Fundierung.' },
+          { tag: 'Kostenlos', t: 'Kostenlos starten', d: 'Motoren und Wartung erfassen, bevor Sie upgraden.' }
+        ],
+        ctaTitle: 'Sparkmaster für Android laden.',
+        ctaLead: 'Jetzt bei Google Play. iOS später. Support: support@sparkmaster.app',
+        footerPrivacy: 'Datenschutz', footerSupport: 'Support',
+        metaDesc: 'Offline-first Außenborder-App: Wartung, Fahrten, Diagnose und experimenteller AI-Mechanic. Bei Google Play.'
+      },
+      es: {
+        navFeatures: 'Funciones', navAi: 'AI-Mechanic', navSupport: 'Soporte',
+        pill: 'Android en Google Play · iOS más adelante',
+        heroTitle: 'Domina tu fueraborda.',
+        heroLead: 'Compañero offline-first para mantenimiento, viajes, diagnóstico y herramientas — con AI-Mechanic experimental en el dispositivo en Premium.',
+        heroNote: 'Funciona sin Wi‑Fi del puerto. Los registros se quedan en tu teléfono por defecto.',
+        featuresTitle: 'Hecho para el trabajo real.',
+        featuresLead: 'Del taller al remolque y al agua — sin dependencia de la nube.',
+        features: [
+          { t: 'Mantenimiento y horas', d: 'Trabajos, intervalos, piezas e historial para fuerabordas.' },
+          { t: 'Viajes y marina auto', d: 'Registra viajes para horas. Geocerca opcional en el puerto.' },
+          { t: 'Árboles de fallos', d: 'Diagnóstico guiado e historial en el muelle.' },
+          { t: 'Tacómetro RPM', d: 'Medición acústica de ralentí para ajuste y diagnóstico.' },
+          { t: 'Temporada y pre-salida', d: 'Listas de primavera/invierno y antes de zarpar.' },
+          { t: 'Offline primero', d: 'Lo esencial funciona sin red. No hace falta sincronizar.' }
+        ],
+        aiPill: 'Experimental · Beta',
+        aiTitle: 'AI-Mechanic en tu dispositivo.',
+        aiLead: 'Síntomas guiados, foto o audio y sugerencias con fuentes — sin subir medios a una nube de IA.',
+        aiLi1: 'Incluido en Sparkmaster Premium (una suscripción).',
+        aiLi2: 'Modelo local; la inferencia permanece en el dispositivo.',
+        aiLi3: 'Escaneo guiado y chat para tu motor seleccionado.',
+        aiLi4: 'Solo apoyo a la decisión — verifica el manual oficial.',
+        premiumTitle: 'Sparkmaster Premium',
+        premiumLead: 'Un plan para todo el kit — incluido AI-Mechanic experimental.',
+        premium: [
+          { tag: 'Premium', t: 'Historial y analítica', d: 'Historial ilimitado, combustible, PDF y varios motores.' },
+          { tag: 'Premium', t: 'AI-Mechanic (beta)', d: 'Diagnóstico y chat en el dispositivo con fuentes locales.' },
+          { tag: 'Gratis', t: 'Empieza gratis', d: 'Registra motores y mantenimiento antes de mejorar.' }
+        ],
+        ctaTitle: 'Consigue Sparkmaster en Android.',
+        ctaLead: 'En Google Play. iOS después. Soporte: support@sparkmaster.app',
+        footerPrivacy: 'Privacidad', footerSupport: 'Soporte',
+        metaDesc: 'App offline-first para fuerabordas: mantenimiento, viajes, diagnóstico y AI-Mechanic experimental. En Google Play.'
+      },
+      fr: {
+        navFeatures: 'Fonctions', navAi: 'AI-Mechanic', navSupport: 'Assistance',
+        pill: 'Android sur Google Play · iOS plus tard',
+        heroTitle: 'Maîtrisez votre hors-bord.',
+        heroLead: 'Compagnon offline-first pour l’entretien, les trajets, le diagnostic et les outils — avec AI-Mechanic expérimental sur l’appareil dans Premium.',
+        heroNote: 'Sans Wi‑Fi du port. Les données restent sur le téléphone par défaut.',
+        featuresTitle: 'Conçu pour le travail réel.',
+        featuresLead: 'De l’atelier à la remorque et à l’eau — sans dépendance cloud.',
+        features: [
+          { t: 'Entretien & heures', d: 'Travaux, intervalles, pièces et historique pour hors-bord.' },
+          { t: 'Trajets & marina auto', d: 'Suivi des trajets. Géorepérage marina optionnel.' },
+          { t: 'Arbres de panne', d: 'Diagnostic guidé et historique au ponton.' },
+          { t: 'Compte-tours', d: 'Mesure acoustique du régime pour réglage et diagnostic.' },
+          { t: 'Saison & pré-départ', d: 'Listes printemps/hiver et avant le départ.' },
+          { t: 'Offline d’abord', d: 'Le cœur fonctionne sans réseau. Pas besoin de sync.' }
+        ],
+        aiPill: 'Expérimental · Bêta',
+        aiTitle: 'AI-Mechanic sur l’appareil.',
+        aiLead: 'Symptômes guidés, photo ou son, suggestions sourcées — sans envoi vers un cloud d’IA.',
+        aiLi1: 'Inclus dans Sparkmaster Premium (un abonnement).',
+        aiLi2: 'Modèle local ; l’inférence reste sur l’appareil.',
+        aiLi3: 'Scan guidé et chat pour le moteur sélectionné.',
+        aiLi4: 'Aide à la décision — vérifiez le manuel officiel.',
+        premiumTitle: 'Sparkmaster Premium',
+        premiumLead: 'Un forfait pour tout le kit — dont AI-Mechanic expérimental.',
+        premium: [
+          { tag: 'Premium', t: 'Historique & analyses', d: 'Historique illimitée, carburant, PDF et plusieurs moteurs.' },
+          { tag: 'Premium', t: 'AI-Mechanic (bêta)', d: 'Diagnostic et chat sur l’appareil avec sources locales.' },
+          { tag: 'Gratuit', t: 'Commencer gratuitement', d: 'Enregistrez moteurs et entretien avant d’upgrader.' }
+        ],
+        ctaTitle: 'Obtenez Sparkmaster sur Android.',
+        ctaLead: 'Sur Google Play. iOS plus tard. Support : support@sparkmaster.app',
+        footerPrivacy: 'Confidentialité', footerSupport: 'Assistance',
+        metaDesc: 'App hors-bord offline-first : entretien, trajets, diagnostic et AI-Mechanic expérimental. Sur Google Play.'
+      },
+      sv: {
+        navFeatures: 'Funktioner', navAi: 'AI-Mechanic', navSupport: 'Support',
+        pill: 'Android på Google Play · iOS senare',
+        heroTitle: 'Ta kontroll över din utombordare.',
+        heroLead: 'Offline-first-kompis för underhåll, turer, diagnostik och verktyg — med experimentell AI-Mechanic på enheten i Premium.',
+        heroNote: 'Fungerar utan hamn-Wi‑Fi. Servicedata stannar på telefonen som standard.',
+        featuresTitle: 'Byggd för riktigt båtarbete.',
+        featuresLead: 'Från verkstad till trailer och vatten — utan molnlås.',
+        features: [
+          { t: 'Underhåll & timmar', d: 'Jobb, intervall, delar och historik för utombordare.' },
+          { t: 'Turer & marina-auto', d: 'Spåra turer. Valfri marina-geofence startar/stoppar.' },
+          { t: 'Felsökningsträd', d: 'Guidad diagnostik och historik vid bryggan.' },
+          { t: 'Varvräknare', d: 'Akustisk tomgångsvarvtal för inställning och diagnos.' },
+          { t: 'Säsong & pre-trip', d: 'Checklistor för vår/vinter och före avgång.' },
+          { t: 'Offline först', d: 'Kärnfunktioner utan nät. Sync krävs inte.' }
+        ],
+        aiPill: 'Experimentell · Beta',
+        aiTitle: 'AI-Mechanic på enheten.',
+        aiLead: 'Guidade symptom, foto eller ljud och källförankrade tips — utan uppladdning till AI-moln.',
+        aiLi1: 'Ingår i Sparkmaster Premium (ett abonnemang).',
+        aiLi2: 'Lokal modell; inferens stannar på enheten.',
+        aiLi3: 'Guided scan och chatt för vald motor.',
+        aiLi4: 'Endast beslutsstöd — kontrollera alltid handboken.',
+        premiumTitle: 'Sparkmaster Premium',
+        premiumLead: 'En plan för hela verktygslådan — inklusive experimentell AI-Mechanic.',
+        premium: [
+          { tag: 'Premium', t: 'Historik & analys', d: 'Obegränsad turhistorik, bränsle, PDF och flera motorer.' },
+          { tag: 'Premium', t: 'AI-Mechanic (beta)', d: 'Diagnos och chatt på enheten med lokala källor.' },
+          { tag: 'Gratis', t: 'Börja gratis', d: 'Logga motorer och underhåll innan du uppgraderar.' }
+        ],
+        ctaTitle: 'Hämta Sparkmaster för Android.',
+        ctaLead: 'På Google Play nu. iOS senare. Support: support@sparkmaster.app',
+        footerPrivacy: 'Integritet', footerSupport: 'Support',
+        metaDesc: 'Offline-first-app för utombordare: underhåll, turer, diagnostik och experimentell AI-Mechanic. På Google Play.'
+      },
+      ja: {
+        navFeatures: '機能', navAi: 'AI-Mechanic', navSupport: 'サポート',
+        pill: 'AndroidはGoogle Play · iOSは後日',
+        heroTitle: '船外機を、もっと確実に。',
+        heroLead: '整備・航行・診断・ツールのためのオフライン優先アプリ。Premiumには実験的なオンデバイスAI-Mechanicが含まれます。',
+        heroNote: 'マリーナのWi‑Fiなしでも使えます。整備記録は原則端末に保存されます。',
+        featuresTitle: '現場の整備のために。',
+        featuresLead: '工房からトレーラー、そして水面まで — クラウド必須ではありません。',
+        features: [
+          { t: '整備とアワー', d: '船外機向けの作業・周期・部品・履歴を一か所に。' },
+          { t: '航跡とマリーナ自動', d: '航跡でアワー管理。任意のマリーナジオフェンスで自動開始/終了。' },
+          { t: 'トラブルシュート', d: '案内型の故障ツリーと診断履歴。' },
+          { t: 'RPMメーター', d: 'アイドル回転の音響測定で調整と診断を支援。' },
+          { t: '季節・出港前', d: '春冬と出港前のチェックリスト。' },
+          { t: 'オフライン優先', d: '主要機能は回線なしで動作。同期は必須ではありません。' }
+        ],
+        aiPill: '実験的 · ベータ',
+        aiTitle: '端末上のAI-Mechanic。',
+        aiLead: '症状ガイド、写真や音、出典付きの提案 — エンジン媒体をAIクラウドへ送らずに。',
+        aiLi1: 'Sparkmaster Premiumに含まれます（単一サブスク）。',
+        aiLi2: 'ローカルモデルをダウンロード。推論は端末内。',
+        aiLi3: '選択したエンジン向けのガイドスキャンとチャット。',
+        aiLi4: '判断の補助です。公式マニュアルで必ず確認を。',
+        premiumTitle: 'Sparkmaster Premium',
+        premiumLead: 'フル機能を一つのプランで — 実験的AI-Mechanicを含む。',
+        premium: [
+          { tag: 'Premium', t: '履歴と分析', d: '無制限の航跡履歴、燃料、PDF、複数エンジン。' },
+          { tag: 'Premium', t: 'AI-Mechanic（ベータ）', d: '端末内のガイド診断とチャット（ローカル根拠）。' },
+          { tag: '無料', t: '無料で開始', d: 'アップグレード前にエンジンと整備を記録。' }
+        ],
+        ctaTitle: 'AndroidでSparkmasterを入手。',
+        ctaLead: 'Google Playで配信中。iOSは後日。サポート: support@sparkmaster.app',
+        footerPrivacy: 'プライバシー', footerSupport: 'サポート',
+        metaDesc: '船外機向けオフライン優先アプリ：整備、航跡、診断、実験的AI-Mechanic。Google Playで。'
+      },
+      ko: {
+        navFeatures: '기능', navAi: 'AI-Mechanic', navSupport: '지원',
+        pill: 'Android는 Google Play · iOS는 추후',
+        heroTitle: '선외기를 더 확실하게.',
+        heroLead: '정비·항해·진단·도구를 위한 오프라인 우선 앱. Premium에는 실험적 온디바이스 AI-Mechanic이 포함됩니다.',
+        heroNote: '마리나 Wi‑Fi 없이도 사용. 정비 기록은 기본적으로 기기에 저장됩니다.',
+        featuresTitle: '실제 정비를 위해.',
+        featuresLead: '작업장에서 트레일러, 그리고 물 위까지 — 클라우드 필수 아님.',
+        features: [
+          { t: '정비 & 시간', d: '선외기용 작업, 주기, 부품, 이력을 한곳에.' },
+          { t: '항해 & 마리나 자동', d: '항해로 시간 관리. 선택적 마리나 지오펜스.' },
+          { t: '고장 트리', d: '안내형 진단과 이력.' },
+          { t: 'RPM 미터', d: '공회전 음향 측정으로 조정·진단 지원.' },
+          { t: '계절 & 출항 전', d: '봄/겨울 및 출항 전 체크리스트.' },
+          { t: '오프라인 우선', d: '핵심 기능은 네트워크 없이. 동기화 불필요.' }
+        ],
+        aiPill: '실험적 · 베타',
+        aiTitle: '기기 안의 AI-Mechanic.',
+        aiLead: '증상 가이드, 사진·소리, 출처 기반 제안 — 엔진 미디어를 AI 클라우드로 보내지 않음.',
+        aiLi1: 'Sparkmaster Premium에 포함(단일 구독).',
+        aiLi2: '로컬 모델 다운로드. 추론은 기기에서.',
+        aiLi3: '선택한 엔진용 가이드 스캔과 채팅.',
+        aiLi4: '의사결정 보조일 뿐 — 공식 매뉴얼로 확인하세요.',
+        premiumTitle: 'Sparkmaster Premium',
+        premiumLead: '전체 도구를 하나의 플랜으로 — 실험적 AI-Mechanic 포함.',
+        premium: [
+          { tag: 'Premium', t: '이력 & 분석', d: '무제한 항해 이력, 연료, PDF, 다중 엔진.' },
+          { tag: 'Premium', t: 'AI-Mechanic(베타)', d: '온디바이스 가이드 진단과 채팅(로컬 근거).' },
+          { tag: '무료', t: '무료로 시작', d: '업그레이드 전에 엔진과 정비를 기록.' }
+        ],
+        ctaTitle: 'Android에서 Sparkmaster 받기.',
+        ctaLead: 'Google Play에서 제공. iOS는 추후. 지원: support@sparkmaster.app',
+        footerPrivacy: '개인정보', footerSupport: '지원',
+        metaDesc: '선외기 오프라인 우선 앱: 정비, 항해, 진단, 실험적 AI-Mechanic. Google Play.'
+      }
+    };
+
+    function cardHtml(item) {
+      var tag = item.tag ? '<div class="tag">' + item.tag + '</div>' : '';
+      return '<article class="card">' + tag + '<h3>' + item.t + '</h3><p>' + item.d + '</p></article>';
+    }
+
     function setLanguage(lang) {
+      if (!T[lang]) lang = 'en';
+      var pack = T[lang];
       document.documentElement.lang = lang;
-      document.querySelectorAll('[data-lang-content]').forEach(function (el) {
-        el.classList.toggle('active', el.getAttribute('data-lang-content') === lang);
+      document.querySelectorAll('[data-i18n]').forEach(function (el) {
+        var key = el.getAttribute('data-i18n');
+        if (typeof pack[key] === 'string') el.textContent = pack[key];
       });
-      document.querySelectorAll('[data-lang-inline]').forEach(function (el) {
-        el.classList.toggle('active', el.getAttribute('data-lang-inline') === lang);
-      });
-      document.querySelectorAll('[data-set-lang]').forEach(function (button) {
-        button.classList.toggle('active', button.getAttribute('data-set-lang') === lang);
+      document.getElementById('feature-grid').innerHTML = pack.features.map(cardHtml).join('');
+      document.getElementById('premium-grid').innerHTML = pack.premium.map(cardHtml).join('');
+      var meta = document.querySelector('meta[name="description"]');
+      if (meta) meta.setAttribute('content', pack.metaDesc);
+      var badge = (LANGS.find(function (l) { return l.id === lang; }) || LANGS[0]).badge;
+      var img1 = document.getElementById('play-badge-img');
+      var img2 = document.getElementById('play-badge-img-cta');
+      if (img1) img1.src = badge;
+      if (img2) img2.src = badge;
+      document.querySelectorAll('#lang-switch button').forEach(function (btn) {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
       });
       try { localStorage.setItem('sparkmaster-lang', lang); } catch (e) {}
     }
 
-    document.querySelectorAll('[data-set-lang]').forEach(function (button) {
-      button.addEventListener('click', function () {
-        setLanguage(button.getAttribute('data-set-lang'));
+    (function init() {
+      var switcher = document.getElementById('lang-switch');
+      LANGS.forEach(function (l) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.textContent = l.label;
+        b.setAttribute('data-lang', l.id);
+        b.addEventListener('click', function () { setLanguage(l.id); });
+        switcher.appendChild(b);
       });
-    });
-
-    try {
-      var saved = localStorage.getItem('sparkmaster-lang');
-      if (saved === 'fi' || saved === 'en') setLanguage(saved);
-    } catch (e) {}
+      var start = 'en';
+      try {
+        var saved = localStorage.getItem('sparkmaster-lang');
+        if (saved && T[saved]) start = saved;
+        else {
+          var nav = (navigator.language || 'en').slice(0, 2).toLowerCase();
+          if (T[nav]) start = nav;
+        }
+      } catch (e) {}
+      setLanguage(start);
+    })();
   </script>
 </body>
 </html>

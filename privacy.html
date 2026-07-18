@@ -4,9 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy Policy — Sparkmaster</title>
-  <meta name="description" content="Sparkmaster privacy policy">
-  <link rel="canonical" href="https://sparkmaster.app/privacy-en.html">
-  <meta http-equiv="refresh" content="0; url=privacy-en.html">
+  <meta name="description" content="Sparkmaster privacy policy — choose language">
+  <link rel="canonical" href="https://sparkmaster.app/privacy.html">
+  <link rel="alternate" hreflang="en" href="https://sparkmaster.app/privacy-en.html">
+  <link rel="alternate" hreflang="fi" href="https://sparkmaster.app/privacy-fi.html">
+  <link rel="alternate" hreflang="de" href="https://sparkmaster.app/privacy-de.html">
+  <link rel="alternate" hreflang="es" href="https://sparkmaster.app/privacy-es.html">
+  <link rel="alternate" hreflang="fr" href="https://sparkmaster.app/privacy-fr.html">
+  <link rel="alternate" hreflang="sv" href="https://sparkmaster.app/privacy-sv.html">
+  <link rel="alternate" hreflang="ja" href="https://sparkmaster.app/privacy-ja.html">
+  <link rel="alternate" hreflang="ko" href="https://sparkmaster.app/privacy-ko.html">
+  <link rel="alternate" hreflang="x-default" href="https://sparkmaster.app/privacy-en.html">
   <link rel="icon" href="assets/app-icon.png">
   <style>
 :root{color-scheme:dark;--bg:#07090d;--text:#f4f4f5;--muted:#b7bcc7;--line:rgba(255,255,255,.12);--accent:#e53e3e}
@@ -19,8 +27,11 @@ a{color:inherit;text-decoration-color:rgba(229,62,62,.75);text-underline-offset:
 .brand img{width:40px;height:40px;border-radius:10px}.nav{display:flex;align-items:center;gap:14px;color:var(--muted);font-size:14px;flex-wrap:wrap}
 .card{background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:24px;padding:clamp(24px,4vw,56px);box-shadow:0 24px 80px rgba(0,0,0,.35)}
 h1{margin:0 0 10px;font-size:clamp(2rem,5vw,3.4rem);line-height:1.05;letter-spacing:-.055em}
-h2{margin:42px 0 12px;padding-top:18px;border-top:1px solid var(--line);font-size:clamp(1.25rem,2.4vw,1.65rem);line-height:1.2;letter-spacing:-.025em}
-h3{margin:26px 0 8px;font-size:1.08rem;color:#fff}p,li{color:var(--muted);font-size:16px}p{margin:10px 0}ul{margin:12px 0 0;padding-left:22px}li{margin:7px 0}strong{color:#fff;font-weight:700}
+.lang-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;margin-top:28px;text-align:left}
+.lang-grid a{display:block;padding:14px 16px;border:1px solid var(--line);border-radius:12px;color:var(--text);text-decoration:none;background:rgba(255,255,255,.03);transition:border-color .15s,background .15s}
+.lang-grid a:hover{border-color:rgba(229,62,62,.45);background:rgba(229,62,62,.08);color:#fff}
+.lang-grid span{display:block;font-size:13px;color:var(--muted);margin-top:4px}
+p{color:var(--muted);font-size:16px;margin:10px 0}
 .footer{margin-top:28px;color:rgba(255,255,255,.55);font-size:13px;text-align:center}@media(max-width:640px){.topbar{align-items:flex-start;flex-direction:column}}
   </style>
 </head>
@@ -31,17 +42,38 @@ h3{margin:26px 0 8px;font-size:1.08rem;color:#fff}p,li{color:var(--muted);font-s
         <img src="assets/app-icon.png" alt="" width="40" height="40">
         <span>Sparkmaster</span>
       </a>
+      <nav class="nav" aria-label="Navigation">
+        <a href="/">Home</a>
+        <a href="support.html">Support</a>
+      </nav>
     </header>
-    <article class="card" style="text-align:center;padding:48px 24px">
+    <article class="card" style="text-align:center;padding:48px clamp(24px,4vw,56px)">
       <h1 style="margin-bottom:16px">Privacy Policy</h1>
-      <p>Choose language / Valitse kieli:</p>
-      <p style="margin-top:20px;font-size:18px">
-        <a href="privacy-en.html">English</a>
-        &nbsp;·&nbsp;
-        <a href="privacy-fi.html">Suomi</a>
-      </p>
-      <p style="margin-top:24px;font-size:14px"><a href="privacy-en.html">Continue to English policy →</a></p>
+      <p>Choose your language / Valitse kieli</p>
+      <nav class="lang-grid" aria-label="Privacy policy languages">
+        <a href="privacy-en.html">English<span>EN</span></a>
+        <a href="privacy-fi.html">Suomi<span>FI</span></a>
+        <a href="privacy-de.html">Deutsch<span>DE</span></a>
+        <a href="privacy-es.html">Español<span>ES</span></a>
+        <a href="privacy-fr.html">Français<span>FR</span></a>
+        <a href="privacy-sv.html">Svenska<span>SV</span></a>
+        <a href="privacy-ja.html">日本語<span>JA</span></a>
+        <a href="privacy-ko.html">한국어<span>KO</span></a>
+      </nav>
     </article>
+    <footer class="footer">© 2026 Sparkmaster · Sublime Web Oy · <a href="mailto:support@sparkmaster.app">support@sparkmaster.app</a></footer>
   </main>
+  <script>
+    (function () {
+      var map = { en: 'privacy-en.html', fi: 'privacy-fi.html', de: 'privacy-de.html', es: 'privacy-es.html', fr: 'privacy-fr.html', sv: 'privacy-sv.html', ja: 'privacy-ja.html', ko: 'privacy-ko.html' };
+      try {
+        if (new URLSearchParams(location.search).has('chooser')) return;
+        var saved = localStorage.getItem('sparkmaster-lang');
+        var nav = (navigator.language || 'en').slice(0, 2).toLowerCase();
+        var lang = (saved && map[saved]) ? saved : (map[nav] ? nav : null);
+        if (lang) location.replace(map[lang]);
+      } catch (e) {}
+    })();
+  </script>
 </body>
 </html>

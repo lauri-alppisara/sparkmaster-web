@@ -1,22 +1,27 @@
 # Sparkmaster website
 
-Static GitHub Pages website for sparkmaster.app.
+Static GitHub Pages website for [sparkmaster.app](https://sparkmaster.app).
 
 ## Files
 
-- `index.html` - landing page
-- `privacy.html` - privacy policy
-- `support.html` - support page
-- `CNAME` - custom domain for GitHub Pages
-- `assets/` - logo and Google Play assets
+- `index.html` — landing page (8 languages: en, fi, de, es, fr, sv, ja, ko)
+- `privacy.html` — privacy language chooser (auto-redirects by browser/saved language; `?chooser=1` keeps the grid)
+- `privacy-*.html` — localized privacy policies from app legal markdown v2
+- `support.html` — support page (same 8 languages)
+- `CNAME` — custom domain for GitHub Pages
+- `assets/` — logo and app icon
+- `scripts/generate_privacy_html.py` — regenerates privacy HTML from app sources
 
-## Publish with GitHub Pages
+## Regenerate privacy pages
 
-1. Create a public repository, for example `sparkmaster-site`.
-2. Upload all files and folders from this package to the root of the repository.
-3. Go to **Settings -> Pages**.
-4. Select **Deploy from a branch**.
-5. Select branch **main** and folder **/root**.
-6. Save.
-7. Add custom domain `sparkmaster.app` in **Settings -> Pages**.
-8. Enable **Enforce HTTPS** after DNS has resolved.
+From this repo (with `outboard-companion` as a sibling directory):
+
+```bash
+python scripts/generate_privacy_html.py
+```
+
+Sources: `../outboard-companion/outboard_companion/assets/legal/privacy_policy_*_v2.md`
+
+## Publish
+
+Repo is deployed via GitHub Pages from branch `main` (root), domain `sparkmaster.app`.

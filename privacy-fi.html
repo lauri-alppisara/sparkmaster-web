@@ -8,6 +8,13 @@
   <link rel="canonical" href="https://sparkmaster.app/privacy-fi.html">
   <link rel="alternate" hreflang="en" href="https://sparkmaster.app/privacy-en.html">
   <link rel="alternate" hreflang="fi" href="https://sparkmaster.app/privacy-fi.html">
+  <link rel="alternate" hreflang="de" href="https://sparkmaster.app/privacy-de.html">
+  <link rel="alternate" hreflang="es" href="https://sparkmaster.app/privacy-es.html">
+  <link rel="alternate" hreflang="fr" href="https://sparkmaster.app/privacy-fr.html">
+  <link rel="alternate" hreflang="sv" href="https://sparkmaster.app/privacy-sv.html">
+  <link rel="alternate" hreflang="ja" href="https://sparkmaster.app/privacy-ja.html">
+  <link rel="alternate" hreflang="ko" href="https://sparkmaster.app/privacy-ko.html">
+  <link rel="alternate" hreflang="x-default" href="https://sparkmaster.app/privacy-en.html">
   <link rel="icon" href="assets/app-icon.png">
   <style>
 :root{color-scheme:dark;--bg:#07090d;--text:#f4f4f5;--muted:#b7bcc7;--line:rgba(255,255,255,.12);--accent:#e53e3e}
@@ -34,7 +41,7 @@ h3{margin:26px 0 8px;font-size:1.08rem;color:#fff}p,li{color:var(--muted);font-s
       </a>
       <nav class="nav" aria-label="Navigation">
         <a href="/">Home</a>
-        <a href="privacy-en.html">English</a>
+        <a href="privacy.html">Kielet</a>
         <a href="support.html">Support</a>
       </nav>
     </header>
@@ -45,7 +52,7 @@ h3{margin:26px 0 8px;font-size:1.08rem;color:#fff}p,li{color:var(--muted);font-s
 <p>Y-tunnus: <strong>FI35258693</strong></p>
 <p>Verkkosivusto: <a href="https://sparkmaster.app">https://sparkmaster.app</a></p>
 <p>Yhteydenotot: <a href="mailto:support@sparkmaster.app">support@sparkmaster.app</a></p>
-<p>Päivitetty: 15.6.2026</p>
+<p>Päivitetty: 18.7.2026</p>
 <h2>1. Sovelluksen tarkoitus</h2>
 <p>Sparkmaster on perämoottoreiden huolto- ja ylläpitosovellus. Sovellus tukee useita moottorimerkkejä ja auttaa käyttäjää tallentamaan moottorin perustietoja, huoltohistoriaa, tarkistuksia, valokuvia ja muita veneilyyn liittyviä muistiinpanoja.</p>
 <p>Sparkmaster on suunniteltu ensisijaisesti <strong>offline-first-sovellukseksi</strong>. Tämä tarkoittaa, että sovelluksen perustiedot tallennetaan oletuksena käyttäjän omalle laitteelle, eikä niitä lähetetä Sublime Web Oy:n palvelimille ilman käyttäjän erillistä toimintoa tai suostumusta.</p>
@@ -60,16 +67,18 @@ h3{margin:26px 0 8px;font-size:1.08rem;color:#fff}p,li{color:var(--muted);font-s
 <li><strong>Huoltohistoria</strong>, kuten tehdyt huollot, päivämäärät, osat, työvaiheet ja omat muistiinpanot</li>
 <li><strong>Valokuvat</strong>, jotka käyttäjä lisää moottorista, osista tai huoltovaiheista</li>
 <li><strong>Tarkistuslistat ja huoltomuistiinpanot</strong></li>
-<li><strong>Reissudata</strong>, kuten GPS-koordinaatit, reitin tiedot ja käyttöaika, jos käyttäjä käynnistää reissuseurannan itse</li>
+<li><strong>Matkadata</strong>, kuten GPS-koordinaatit, matka-ajan kesto, käyttötunnit ja valinnainen kohde, jos käyttäjä aloittaa matkaseurannan itse tai ottaa käyttöön sataman automaattisen seurannan</li>
+<li><strong>Diagnoosihistoria</strong>, kuten vianetsinnän tulokset ja AI-Mechanic-skannausten yhteenvedot, jotka käyttäjä päättää tallentaa</li>
 <li><strong>Valinnainen huoltoliikkeen yhteystieto</strong> (esim. sähköposti), jos käyttäjä syöttää sen asetuksiin</li>
 <li><strong>Satunnainen tunniste (UUID)</strong>, jos käyttäjä käyttää yhteisö- tai kontribuutio-ominaisuuksia</li>
 </ul>
 <p>Nämä tiedot tallennetaan oletuksena paikallisesti käyttäjän laitteelle.</p>
 <h3>3.2 Sijaintitiedot</h3>
-<p>Sparkmaster voi käsitellä sijaintitietoja vain, jos käyttäjä käyttää reissuseurantaa tai muuta sijaintiin perustuvaa toimintoa.</p>
-<p>Sijaintitietoja käsitellään vain käyttäjän omasta toiminnosta, kuten reissuseurannan käynnistämisestä. Reittipisteet tallennetaan laitteelle. Seurannan aikana sijaintia voidaan lukea, kun sovellus on auki tai taustalla samalla laitteella; seuranta ei jatku sen jälkeen, kun sovellus on täysin suljettu.</p>
-<p>Sijaintitietoja ei lähetetä oletuksena Sublime Web Oy:n palvelimille.</p>
-<p>Jos reissuseuranta ei ole käytössä, sovellus ei käsittele sijaintitietoja.</p>
+<p>Sparkmaster voi käsitellä sijaintitietoja vain, jos käyttäjä käyttää matkaseurantaa tai ottaa käyttöön sataman automaattisen seurannan (valinnainen).</p>
+<p><strong>Manuaalinen matkaseuranta:</strong> Käyttäjä aloittaa matkan itse. Matkan aikana sovellus tallentaa harvoja GPS-pisteitä käyttötuntien ja matka-ajan laskemiseksi. Matkan aikana näytetään jatkuva ilmoitus (foreground service). Sijaintia voidaan lukea myös näytön ollessa pois päältä vain aktiivisen matkan keston ajan. Reittipisteet tallennetaan laitteelle.</p>
+<p><strong>Sataman automaattinen seuranta (valinnainen):</strong> Käyttäjä voi erikseen ottaa käyttöön kotisatamaan perustuvan geofence-seurannan (Matkat → Sataman automaattinen seuranta). Kun käyttäjä poistuu määritetystä satama-alueesta, matka voi alkaa automaattisesti; palatessaan matka voi päättyä. Tämä käyttää Androidin geofence-toimintoa, joka voi vaatia taustasijaintiluvan (<code>ACCESS_BACKGROUND_LOCATION</code>) luotettavaan toimintaan myös silloin, kun sovellus on suljettu tai näyttö on kiinni. Toiminto on oletuksena pois päältä.</p>
+<p><strong>Luvat ja valinnat:</strong> Sovellus pyytää sijaintilupia vasta sen jälkeen, kun käyttäjä on nähnyt selityksen. Taustasijaintilupa pyydetään vain sataman automaattista seurantaa varten. Käyttäjä voi evätä luvan tai perua sen laitteen asetuksista milloin tahansa.</p>
+<p>Sijaintitietoja ei lähetetä oletuksena Sublime Web Oy:n palvelimille. Jos matkaseurantaa tai sataman automaattista seurantaa ei käytetä, sovellus ei käsittele sijaintitietoja.</p>
 <h3>3.3 Valokuvat</h3>
 <p>Käyttäjä voi lisätä sovellukseen valokuvia esimerkiksi moottorista, osista tai huoltovaiheista. Valokuvat tallennetaan oletuksena käyttäjän laitteelle.</p>
 <p>Jos käyttäjä myöhemmin jakaa kuvan yhteisötoiminnon kautta tai lähettää sen bugiraportin mukana, käyttäjä vastaa siitä, ettei kuvassa näy henkilötietoja, rekisterinumeroita, kasvoja, sijaintitietoja tai muuta sisältöä, jota hän ei halua jakaa.</p>
@@ -86,6 +95,10 @@ h3{margin:26px 0 8px;font-size:1.08rem;color:#fff}p,li{color:var(--muted);font-s
 <p>Satunnainen tunniste (UUID) ei ole käyttäjän nimi tai sähköpostiosoite, mutta se voi olla pysyvä tekninen tunniste. Siksi sitä käsitellään varovaisuusperiaatteen mukaisesti henkilötietona silloin, kun se voi liittyä julkaistuun sisältöön.</p>
 <p>Julkaistut yhteisökontribuutiot voidaan lisensoida <strong>Creative Commons Attribution 4.0 International (CC BY 4.0)</strong> -lisenssillä. Tämä tarkoittaa, että muut voivat käyttää julkaistua sisältöä, kunhan alkuperäinen kontribuutio mainitaan lisenssin ehtojen mukaisesti.</p>
 <p>Käyttäjän tulee varmistaa ennen julkaisemista, ettei jaettava sisältö sisällä henkilötietoja tai muuta sellaista tietoa, jota hän ei halua julkiseksi.</p>
+<h3>3.5 AI-Mechanic ja laitteella toimiva tekoäly</h3>
+<p>Jos käyttäjä ottaa AI-Mechanicin käyttöön, Sparkmaster voi käsitellä oirevastauksia, valittuja kuvia, lyhyitä moottoriääninäytteitä, RPM-mittauksia sekä minimoitua yhteenvetoa moottori- ja huoltotiedoista. Tekoälypäättely tapahtuu paikallisesti käyttäjän laitteella. Sisältöä ei lähetetä Sublime Web Oy:lle tai tekoälypalveluntarjoajalle.</p>
+<p>Skannauksessa käytetyt raakakuvat ja äänet poistetaan oletuksena analyysin jälkeen. Käyttäjä voi erikseen säilyttää terveen moottorin lähtötason tai tallentaa tuloksen paikalliseen diagnoosihistoriaan. AI-chat-viestit säilyvät vain nykyisen istunnon ajan ja tyhjennetään, kun käyttäjä poistuu chatista. Ladattava tekoälymalli tallennetaan paikallisesti ja sen voi poistaa sovelluksen asetuksista. Jaettava Engine Health Passport luodaan vain käyttäjän vahvistuksella, ja siitä poistetaan oletuksena sarjanumero, tarkka sijainti, raakamedia ja vapaat muistiinpanot.</p>
+<p>AI-Mechanic on päätöksenteon tuki, ei varma diagnoosi. Turvallisuuskriittiset varoitukset käyttävät tekoälyn lisäksi sovelluksen kiinteitä sääntöjä. Käyttäjän tulee varmistaa huolto- ja turvallisuusohjeet moottorin virallisesta dokumentaatiosta.</p>
 <h2>4. Mitä emme tallenna omille palvelimillemme</h2>
 <p>Sparkmaster ei oletuksena tallenna seuraavia Sublime Web Oy:n omille palvelimille:</p>
 <ul>
@@ -113,7 +126,7 @@ h3{margin:26px 0 8px;font-size:1.08rem;color:#fff}p,li{color:var(--muted);font-s
 <li>Laitemallin ja käyttöjärjestelmäversion</li>
 <li>Ei-henkilökohtaista teknistä kontekstia, kuten valittu moottorimerkki tai -perhe (jos saatavilla)</li>
 </ul>
-<p>Crashlytics <strong>ei</strong> kerää huoltomerkintöjä, kuvia, reittidataa tai sarjanumeroita tietueistasi. Debug-buildissä Crashlytics-kokoelu on oletuksena pois päältä.</p>
+<p>Crashlytics <strong>ei</strong> kerää huoltomerkintöjä, kuvia, reittidataa tai sarjanumeroita tietueistasi. Voit kytkeä kaatumisraportit pois päältä sovelluksen asetuksista (Asetukset → Jaa anonyymit käyttötiedot). Debug-buildissä keräys on aina pois päältä.</p>
 <h3>Firebase Analytics (Google)</h3>
 <p>Release-versiossa, jossa Firebase on konfiguroitu, sovellus voi lähettää <strong>koostettua tuoteanalytiikkaa</strong> Google Firebase Analyticsiin, jotta ymmärrämme ominaisuuksien käyttöä ja voimme parantaa sovellusta. Tätä <strong>ei</strong> käytetä mainontaan tai markkinointiprofiileihin.</p>
 <p>Esimerkkejä lähetettävästä:</p>
@@ -122,7 +135,7 @@ h3{margin:26px 0 8px;font-size:1.08rem;color:#fff}p,li{color:var(--muted);font-s
 <li>Ei-henkilökohtaisia parametreja, kuten moottorimerkki, moottoriperhe, osaluokka, luottamustaso, polttoaineyksikkö tai numerollinen kulutus, jonka itse jaat</li>
 <li>Sovellusversiota ja teknistä kontekstia, kuten Crashlyticsissä</li>
 </ul>
-<p>Analytics <strong>ei</strong> kerää nimeä, sähköpostia, sarjanumeroa, huoltomerkintöjä, kuvia, reittidataa tai tarkkaa sijaintia. Debug-buildissä Analytics-kokoelu on oletuksena pois päältä.</p>
+<p>Analytics <strong>ei</strong> kerää nimeä, sähköpostia, sarjanumeroa, huoltomerkintöjä, kuvia, reittidataa tai tarkkaa sijaintia. Voit kytkeä analytiikan pois päältä sovelluksen asetuksista (Asetukset → Jaa anonyymit käyttötiedot). Debug-buildissä keräys on aina pois päältä.</p>
 <p>Firebase / Google -tietosuoja: <a href="https://firebase.google.com/support/privacy">https://firebase.google.com/support/privacy</a></p>
 <h3>Muu verkkokäyttö</h3>
 <p>Sovellus voi avata linkkejä käyttäjän selaimeen (esim. jälleenmyyjäsivut) ja ladata fontteja tai vastaavia käyttöliittymäresursseja. Niitä ei käytetä mainosprofiilien rakentamiseen.</p>
