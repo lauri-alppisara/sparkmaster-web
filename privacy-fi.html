@@ -52,7 +52,7 @@ h3{margin:26px 0 8px;font-size:1.08rem;color:#fff}p,li{color:var(--muted);font-s
 <p>Y-tunnus: <strong>FI35258693</strong></p>
 <p>Verkkosivusto: <a href="https://sparkmaster.app">https://sparkmaster.app</a></p>
 <p>Yhteydenotot: <a href="mailto:support@sparkmaster.app">support@sparkmaster.app</a></p>
-<p>Päivitetty: 18.7.2026</p>
+<p>Päivitetty: 19.7.2026</p>
 <h2>1. Sovelluksen tarkoitus</h2>
 <p>Sparkmaster on perämoottoreiden huolto- ja ylläpitosovellus. Sovellus tukee useita moottorimerkkejä ja auttaa käyttäjää tallentamaan moottorin perustietoja, huoltohistoriaa, tarkistuksia, valokuvia ja muita veneilyyn liittyviä muistiinpanoja.</p>
 <p>Sparkmaster on suunniteltu ensisijaisesti <strong>offline-first-sovellukseksi</strong>. Tämä tarkoittaa, että sovelluksen perustiedot tallennetaan oletuksena käyttäjän omalle laitteelle, eikä niitä lähetetä Sublime Web Oy:n palvelimille ilman käyttäjän erillistä toimintoa tai suostumusta.</p>
@@ -68,7 +68,7 @@ h3{margin:26px 0 8px;font-size:1.08rem;color:#fff}p,li{color:var(--muted);font-s
 <li><strong>Valokuvat</strong>, jotka käyttäjä lisää moottorista, osista tai huoltovaiheista</li>
 <li><strong>Tarkistuslistat ja huoltomuistiinpanot</strong></li>
 <li><strong>Matkadata</strong>, kuten GPS-koordinaatit, matka-ajan kesto, käyttötunnit ja valinnainen kohde, jos käyttäjä aloittaa matkaseurannan itse tai ottaa käyttöön sataman automaattisen seurannan</li>
-<li><strong>Diagnoosihistoria</strong>, kuten vianetsinnän tulokset ja AI-Mechanic-skannausten yhteenvedot, jotka käyttäjä päättää tallentaa</li>
+<li><strong>Diagnoosihistoria</strong>, kuten vianetsinnän tulokset ja SparkPilot-skannausten yhteenvedot, jotka käyttäjä päättää tallentaa</li>
 <li><strong>Valinnainen huoltoliikkeen yhteystieto</strong> (esim. sähköposti), jos käyttäjä syöttää sen asetuksiin</li>
 <li><strong>Satunnainen tunniste (UUID)</strong>, jos käyttäjä käyttää yhteisö- tai kontribuutio-ominaisuuksia</li>
 </ul>
@@ -95,10 +95,10 @@ h3{margin:26px 0 8px;font-size:1.08rem;color:#fff}p,li{color:var(--muted);font-s
 <p>Satunnainen tunniste (UUID) ei ole käyttäjän nimi tai sähköpostiosoite, mutta se voi olla pysyvä tekninen tunniste. Siksi sitä käsitellään varovaisuusperiaatteen mukaisesti henkilötietona silloin, kun se voi liittyä julkaistuun sisältöön.</p>
 <p>Julkaistut yhteisökontribuutiot voidaan lisensoida <strong>Creative Commons Attribution 4.0 International (CC BY 4.0)</strong> -lisenssillä. Tämä tarkoittaa, että muut voivat käyttää julkaistua sisältöä, kunhan alkuperäinen kontribuutio mainitaan lisenssin ehtojen mukaisesti.</p>
 <p>Käyttäjän tulee varmistaa ennen julkaisemista, ettei jaettava sisältö sisällä henkilötietoja tai muuta sellaista tietoa, jota hän ei halua julkiseksi.</p>
-<h3>3.5 AI-Mechanic ja laitteella toimiva tekoäly</h3>
-<p>Jos käyttäjä ottaa AI-Mechanicin käyttöön, Sparkmaster voi käsitellä oirevastauksia, valittuja kuvia, lyhyitä moottoriääninäytteitä, RPM-mittauksia sekä minimoitua yhteenvetoa moottori- ja huoltotiedoista. Tekoälypäättely tapahtuu paikallisesti käyttäjän laitteella. Sisältöä ei lähetetä Sublime Web Oy:lle tai tekoälypalveluntarjoajalle.</p>
-<p>Skannauksessa käytetyt raakakuvat ja äänet poistetaan oletuksena analyysin jälkeen. Myös AI-Mechanic-chattiin liitetyt kuvat käsitellään vain laitteella ja tyhjennetään vuoron / chat-istunnon jälkeen (niitä ei lähetetä verkkoon). Käyttäjä voi erikseen säilyttää terveen moottorin lähtötason tai tallentaa tuloksen paikalliseen diagnoosihistoriaan. AI-chat-viestit säilyvät vain nykyisen istunnon ajan ja tyhjennetään, kun käyttäjä poistuu chatista. Chatissa näytettävät kaaviomaiset 3D-sijaintimallit ovat sovelluksen omia havainnekuvia, eivät OEM-räjäytyskuvia. Ladattava tekoälymalli tallennetaan paikallisesti ja sen voi poistaa sovelluksen asetuksista. Jaettava Engine Health Passport luodaan vain käyttäjän vahvistuksella, ja siitä poistetaan oletuksena sarjanumero, tarkka sijainti, raakamedia ja vapaat muistiinpanot.</p>
-<p>AI-Mechanic on päätöksenteon tuki, ei varma diagnoosi. Turvallisuuskriittiset varoitukset käyttävät tekoälyn lisäksi sovelluksen kiinteitä sääntöjä. Käyttäjän tulee varmistaa huolto- ja turvallisuusohjeet moottorin virallisesta dokumentaatiosta.</p>
+<h3>3.5 SparkPilot ja laitteella toimiva tekoäly</h3>
+<p>Jos käyttäjä ottaa SparkPilotin käyttöön, Sparkmaster voi käsitellä oirevastauksia, valittuja kuvia, lyhyitä moottoriääninäytteitä, RPM-mittauksia sekä minimoitua yhteenvetoa moottori- ja huoltotiedoista. Tekoälypäättely tapahtuu paikallisesti käyttäjän laitteella. Sisältöä ei lähetetä Sublime Web Oy:lle tai tekoälypalveluntarjoajalle.</p>
+<p>Skannauksessa käytetyt raakakuvat ja äänet poistetaan oletuksena analyysin jälkeen. Myös SparkPilot-chattiin liitetyt kuvat käsitellään vain laitteella ja tyhjennetään vuoron / chat-istunnon jälkeen (niitä ei lähetetä verkkoon). Käyttäjä voi erikseen säilyttää terveen moottorin lähtötason tai tallentaa tuloksen paikalliseen diagnoosihistoriaan. AI-chat-viestit säilyvät vain nykyisen istunnon ajan ja tyhjennetään, kun käyttäjä poistuu chatista. Chatissa näytettävät kaaviomaiset 3D-sijaintimallit ovat sovelluksen omia havainnekuvia, eivät OEM-räjäytyskuvia. Ladattava tekoälymalli tallennetaan paikallisesti ja sen voi poistaa sovelluksen asetuksista. Jaettava Engine Health Passport luodaan vain käyttäjän vahvistuksella, ja siitä poistetaan oletuksena sarjanumero, tarkka sijainti, raakamedia ja vapaat muistiinpanot.</p>
+<p>SparkPilot on päätöksenteon tuki, ei varma diagnoosi. Turvallisuuskriittiset varoitukset käyttävät tekoälyn lisäksi sovelluksen kiinteitä sääntöjä. Käyttäjän tulee varmistaa huolto- ja turvallisuusohjeet moottorin virallisesta dokumentaatiosta.</p>
 <h2>4. Mitä emme tallenna omille palvelimillemme</h2>
 <p>Sparkmaster ei oletuksena tallenna seuraavia Sublime Web Oy:n omille palvelimille:</p>
 <ul>

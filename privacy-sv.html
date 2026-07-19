@@ -52,7 +52,7 @@ h3{margin:26px 0 8px;font-size:1.08rem;color:#fff}p,li{color:var(--muted);font-s
 <p>FO-nummer: <strong>FI35258693</strong></p>
 <p>Webbplats: <a href="https://sparkmaster.app">https://sparkmaster.app</a></p>
 <p>Kontakt: <a href="mailto:support@sparkmaster.app">support@sparkmaster.app</a></p>
-<p>Uppdaterad: 18 juli 2026</p>
+<p>Uppdaterad: 19 juli 2026</p>
 <h2>1. Appens syfte</h2>
 <p>Sparkmaster är en underhålls- och serviceapp för utombordare. Appen stöder flera motormärken och hjälper användare att registrera motoruppgifter, underhållshistorik, kontroller, foton och andra båtrelaterade anteckningar.</p>
 <p>Sparkmaster är i första hand utformad som en <strong>offline-first-app</strong>. Det innebär att appens grunddata som standard lagras på användarens egen enhet och inte skickas till Sublime Web Oy:s servrar utan separat användaråtgärd eller samtycke.</p>
@@ -68,7 +68,7 @@ h3{margin:26px 0 8px;font-size:1.08rem;color:#fff}p,li{color:var(--muted);font-s
 <li><strong>Foton</strong> som användaren lägger till, till exempel av motorn, delar eller underhållssteg</li>
 <li><strong>Checklistor och serviceanteckningar</strong></li>
 <li><strong>Resedata</strong>, såsom GPS-koordinater, resans längd, motortimmar och valfritt mål, om användaren startar resespårning manuellt eller aktiverar valfri automatisk hamnspårning</li>
-<li><strong>Diagnoshistorik</strong>, såsom felsökningsresultat och AI-Mechanic-skanningsammanfattningar som användaren väljer att spara</li>
+<li><strong>Diagnoshistorik</strong>, såsom felsökningsresultat och SparkPilot-skanningsammanfattningar som användaren väljer att spara</li>
 <li><strong>Valfria verkstads- eller servicekontaktuppgifter</strong> (till exempel e-post), om användaren anger dem i inställningarna</li>
 <li><strong>Slumpmässig identifierare (UUID)</strong> om användaren använder community- eller bidragsfunktioner</li>
 </ul>
@@ -95,10 +95,10 @@ h3{margin:26px 0 8px;font-size:1.08rem;color:#fff}p,li{color:var(--muted);font-s
 <p>Den slumpmässiga identifieraren (UUID) är inte användarens namn eller e-postadress, men kan vara en beständig teknisk identifierare. Den behandlas därför i försiktighetssyfte som personuppgift när den kan kopplas till publicerat innehåll.</p>
 <p>Publicerade community-bidrag kan licensieras under licensen <strong>Creative Commons Attribution 4.0 International (CC BY 4.0)</strong>. Det innebär att andra får använda det publicerade innehållet, förutsatt att det ursprungliga bidraget anges enligt licensvillkoren.</p>
 <p>Innan publicering bör användaren säkerställa att det delade innehållet inte innehåller personuppgifter eller annan information som användaren inte vill göra offentlig.</p>
-<h3>3.5 AI-Mechanic och AI på enheten</h3>
-<p>Om användaren aktiverar AI-Mechanic kan Sparkmaster behandla symptomsvar, valda foton, korta motorljud, RPM-mätningar och en minimerad sammanfattning av motor- och servicedata. AI-analysen körs lokalt på enheten. Innehållet skickas inte till Sublime Web Oy eller en AI-leverantör.</p>
-<p>Råa foton och ljud raderas som standard efter analysen. Foton som bifogas i AI-Mechanic-chatten behandlas också bara på enheten och rensas efter turen eller när sessionen avslutas (ingen uppladdning). Användaren kan separat spara en referens för en frisk motor eller spara ett resultat i den lokala diagnoshistoriken. AI-chattmeddelanden sparas bara under den aktuella sessionen och rensas när användaren lämnar chatten. De schematiska 3D-lägesmodellerna i chatten är appens egna illustrationer, inte OEM-sprängskisser. Den nedladdningsbara AI-modellen lagras lokalt och kan tas bort i inställningarna. Ett Engine Health Passport skapas bara efter bekräftelse och utesluter som standard serienummer, exakt position, råmedia och fria anteckningar.</p>
-<p>AI-Mechanic är beslutsstöd, inte en garanterad diagnos. Säkerhetskritiska varningar använder fasta appregler utöver AI. Användaren måste kontrollera service- och säkerhetsanvisningar mot motorns officiella dokumentation.</p>
+<h3>3.5 SparkPilot och AI på enheten</h3>
+<p>Om användaren aktiverar SparkPilot kan Sparkmaster behandla symptomsvar, valda foton, korta motorljud, RPM-mätningar och en minimerad sammanfattning av motor- och servicedata. AI-analysen körs lokalt på enheten. Innehållet skickas inte till Sublime Web Oy eller en AI-leverantör.</p>
+<p>Råa foton och ljud raderas som standard efter analysen. Foton som bifogas i SparkPilot-chatten behandlas också bara på enheten och rensas efter turen eller när sessionen avslutas (ingen uppladdning). Användaren kan separat spara en referens för en frisk motor eller spara ett resultat i den lokala diagnoshistoriken. AI-chattmeddelanden sparas bara under den aktuella sessionen och rensas när användaren lämnar chatten. De schematiska 3D-lägesmodellerna i chatten är appens egna illustrationer, inte OEM-sprängskisser. Den nedladdningsbara AI-modellen lagras lokalt och kan tas bort i inställningarna. Ett Engine Health Passport skapas bara efter bekräftelse och utesluter som standard serienummer, exakt position, råmedia och fria anteckningar.</p>
+<p>SparkPilot är beslutsstöd, inte en garanterad diagnos. Säkerhetskritiska varningar använder fasta appregler utöver AI. Användaren måste kontrollera service- och säkerhetsanvisningar mot motorns officiella dokumentation.</p>
 <h2>4. Information vi inte samlar in på våra servrar</h2>
 <p>Som standard lagrar Sparkmaster inte följande på Sublime Web Oy:s egna servrar:</p>
 <ul>
