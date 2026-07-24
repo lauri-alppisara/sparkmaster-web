@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -156,6 +156,7 @@
       </a>
       <nav class="nav" aria-label="Main">
         <a class="nav-link" href="#features" data-i18n="navFeatures">Features</a>
+        <a class="nav-link" href="winterize.html" data-i18n="navWinterize">Winterize</a>
         <a class="nav-link" href="#ai" data-i18n="navAi">SparkPilot</a>
         <a href="#support" data-i18n="navSupport">Support</a>
         <div class="lang" id="lang-switch" aria-label="Language"></div>
@@ -237,6 +238,7 @@
     <div class="container footer-inner">
       <div>© 2026 Sparkmaster · Sublime Web Oy</div>
       <div class="footer-links">
+        <a href="winterize.html" data-i18n="footerWinterize">Winterize</a>
         <a href="privacy.html?chooser=1" data-i18n="footerPrivacy">Privacy Policy</a>
         <a href="support.html" data-i18n="footerSupport">Support</a>
         <a href="https://play.google.com/store/apps/details?id=app.sparkmaster.mobile" rel="noopener noreferrer" target="_blank">Google Play</a>
@@ -259,10 +261,10 @@
 
     var T = {
       en: {
-        navFeatures: 'Features', navAi: 'SparkPilot', navSupport: 'Support',
+        navFeatures: 'Features', navWinterize: 'Winterize', navAi: 'SparkPilot', navSupport: 'Support',
         pill: 'Android on Google Play · iOS later',
         heroTitle: 'Master your outboard.',
-        heroLead: 'Offline-first companion for maintenance, trips, diagnostics and tools — with experimental on-device SparkPilot in Premium.',
+        heroLead: 'Offline-first companion for maintenance, hours, diagnostics and seasonal checklists — Premium adds history, PDF and SparkPilot.',
         heroNote: 'Works without marina Wi‑Fi. Service records stay on your phone by default.',
         featuresTitle: 'Built for real outboard work.',
         featuresLead: 'Everything between the workshop, the trailer and the water — without cloud lock-in.',
@@ -282,22 +284,22 @@
         aiLi3: 'Guided scan and chat scoped to your selected engine.',
         aiLi4: 'Decision support only — always verify against the official manual.',
         premiumTitle: 'Sparkmaster Premium',
-        premiumLead: 'One plan for the full toolkit — including experimental SparkPilot.',
+        premiumLead: 'One yearly plan with a 7-day free trial — including experimental SparkPilot.',
         premium: [
-          { tag: 'Premium', t: 'Full history & analytics', d: 'Unlimited trip history, fuel insights, PDF reports and multiple engines.' },
-          { tag: 'Premium', t: 'SparkPilot (beta)', d: 'On-device guided diagnosis and chat with local grounding and safety rules.' },
-          { tag: 'Free core', t: 'Start free', d: 'Log engines, maintenance and basics before you upgrade.' }
+          { tag: 'Free core', t: 'Start free', d: 'Engines, maintenance, trips/fill-ups, troubleshooting and seasonal checklists.' },
+          { tag: 'Premium', t: 'Full history & PDF', d: 'Unlimited trip history, fuel analytics, PDF reports and multiple engines.' },
+          { tag: 'Premium', t: 'SparkPilot (beta)', d: 'On-device guided diagnosis and chat with local grounding and safety rules.' }
         ],
         ctaTitle: 'Get Sparkmaster on Android.',
         ctaLead: 'On Google Play now. iOS later. Support: support@sparkmaster.app',
-        footerPrivacy: 'Privacy Policy', footerSupport: 'Support',
+        footerPrivacy: 'Privacy Policy', footerSupport: 'Support', footerWinterize: 'Winterize',
         metaDesc: 'Offline-first outboard companion: maintenance, trips, diagnostics and experimental on-device SparkPilot. On Google Play.'
       },
       fi: {
-        navFeatures: 'Ominaisuudet', navAi: 'SparkPilot', navSupport: 'Tuki',
+        navFeatures: 'Ominaisuudet', navWinterize: 'Talvisäilytys', navAi: 'SparkPilot', navSupport: 'Tuki',
         pill: 'Android Google Playssa · iOS myöhemmin',
         heroTitle: 'Hallitse perämoottorisi.',
-        heroLead: 'Offline-first -kumppani huoltoon, matkoihin, vianetsintään ja työkaluihin — Premiumissa kokeellinen, laitteella toimiva SparkPilot.',
+        heroLead: 'Offline-first -kumppani huoltoon, tunteihin, vianetsintään ja kausichecklistoihin — Premiumiin historia, PDF ja SparkPilot.',
         heroNote: 'Toimii ilman sataman Wi‑Fiä. Huoltotiedot pysyvät oletuksena puhelimessasi.',
         featuresTitle: 'Rakennettu oikeaan veneilyyn.',
         featuresLead: 'Työpajasta traileriin ja vesille — ilman pilvilukkoa.',
@@ -317,19 +319,19 @@
         aiLi3: 'Ohjattu skannaus ja chat valitulle moottorille.',
         aiLi4: 'Vain päätöksenteon tuki — vahvista aina virallisesta ohjekirjasta.',
         premiumTitle: 'Sparkmaster Premium',
-        premiumLead: 'Yksi tilaus koko työkalupakille — mukana kokeellinen SparkPilot.',
+        premiumLead: 'Yksi vuositilaus ja 7 päivän ilmainen kokeilu — mukana kokeellinen SparkPilot.',
         premium: [
-          { tag: 'Premium', t: 'Historia & analytiikka', d: 'Rajoittamaton matkahistoria, polttoainenäkymät, PDF-raportit ja useampi moottori.' },
-          { tag: 'Premium', t: 'SparkPilot (beta)', d: 'Laitteella toimiva ohjattu diagnoosi ja chat paikallisilla lähteillä ja turvasäännöillä.' },
-          { tag: 'Ilmainen ydin', t: 'Aloita ilmaiseksi', d: 'Kirjaa moottorit, huollot ja perustoiminnot ennen päivitystä.' }
+          { tag: 'Ilmainen ydin', t: 'Aloita ilmaiseksi', d: 'Moottorit, huolto, matkat/tankkaukset, vianetsintä ja kausichecklistat.' },
+          { tag: 'Premium', t: 'Historia & PDF', d: 'Rajoittamaton matkahistoria, polttoaineanalytiikka, PDF-raportit ja useampi moottori.' },
+          { tag: 'Premium', t: 'SparkPilot (beta)', d: 'Laitteella toimiva ohjattu diagnoosi ja chat paikallisilla lähteillä ja turvasäännöillä.' }
         ],
         ctaTitle: 'Lataa Sparkmaster Androidille.',
         ctaLead: 'Google Playssa nyt. iOS myöhemmin. Tuki: support@sparkmaster.app',
-        footerPrivacy: 'Tietosuoja', footerSupport: 'Tuki',
+        footerPrivacy: 'Tietosuoja', footerSupport: 'Tuki', footerWinterize: 'Talvisäilytys',
         metaDesc: 'Offline-first perämoottorikumppani: huolto, matkat, vianetsintä ja kokeellinen SparkPilot. Google Playssa.'
       },
       de: {
-        navFeatures: 'Funktionen', navAi: 'SparkPilot', navSupport: 'Support',
+        navFeatures: 'Funktionen', navWinterize: 'Winterfest', navAi: 'SparkPilot', navSupport: 'Support',
         pill: 'Android bei Google Play · iOS später',
         heroTitle: 'Dein Außenborder im Griff.',
         heroLead: 'Offline-first Begleiter für Wartung, Fahrten, Diagnose und Tools — mit experimentellem On-Device-SparkPilot in Premium.',
@@ -352,7 +354,7 @@
         aiLi3: 'Geführter Scan und Chat für Ihren Motor.',
         aiLi4: 'Nur Entscheidungshilfe — immer im Handbuch prüfen.',
         premiumTitle: 'Sparkmaster Premium',
-        premiumLead: 'Ein Plan für das volle Toolkit — inkl. experimentellem SparkPilot.',
+        premiumLead: 'Ein Jahresabo mit 7-Tage-Test — inkl. experimentellem SparkPilot.',
         premium: [
           { tag: 'Premium', t: 'Historie & Analytics', d: 'Unbegrenzte Fahrtenhistorie, Kraftstoffanalysen, PDF und mehrere Motoren.' },
           { tag: 'Premium', t: 'SparkPilot (Beta)', d: 'On-Device-Diagnose und Chat mit lokaler Fundierung.' },
@@ -360,11 +362,11 @@
         ],
         ctaTitle: 'Sparkmaster für Android laden.',
         ctaLead: 'Jetzt bei Google Play. iOS später. Support: support@sparkmaster.app',
-        footerPrivacy: 'Datenschutz', footerSupport: 'Support',
+        footerPrivacy: 'Datenschutz', footerSupport: 'Support', footerWinterize: 'Winterfest',
         metaDesc: 'Offline-first Außenborder-App: Wartung, Fahrten, Diagnose und experimenteller SparkPilot. Bei Google Play.'
       },
       es: {
-        navFeatures: 'Funciones', navAi: 'SparkPilot', navSupport: 'Soporte',
+        navFeatures: 'Funciones', navWinterize: 'Invernaje', navAi: 'SparkPilot', navSupport: 'Soporte',
         pill: 'Android en Google Play · iOS más adelante',
         heroTitle: 'Domina tu fueraborda.',
         heroLead: 'Compañero offline-first para mantenimiento, viajes, diagnóstico y herramientas — con SparkPilot experimental en el dispositivo en Premium.',
@@ -387,7 +389,7 @@
         aiLi3: 'Escaneo guiado y chat para tu motor seleccionado.',
         aiLi4: 'Solo apoyo a la decisión — verifica el manual oficial.',
         premiumTitle: 'Sparkmaster Premium',
-        premiumLead: 'Un plan para todo el kit — incluido SparkPilot experimental.',
+        premiumLead: 'Un plan anual con 7 días de prueba — incluido SparkPilot experimental.',
         premium: [
           { tag: 'Premium', t: 'Historial y analítica', d: 'Historial ilimitado, combustible, PDF y varios motores.' },
           { tag: 'Premium', t: 'SparkPilot (beta)', d: 'Diagnóstico y chat en el dispositivo con fuentes locales.' },
@@ -395,11 +397,11 @@
         ],
         ctaTitle: 'Consigue Sparkmaster en Android.',
         ctaLead: 'En Google Play. iOS después. Soporte: support@sparkmaster.app',
-        footerPrivacy: 'Privacidad', footerSupport: 'Soporte',
+        footerPrivacy: 'Privacidad', footerSupport: 'Soporte', footerWinterize: 'Invernaje',
         metaDesc: 'App offline-first para fuerabordas: mantenimiento, viajes, diagnóstico y SparkPilot experimental. En Google Play.'
       },
       fr: {
-        navFeatures: 'Fonctions', navAi: 'SparkPilot', navSupport: 'Assistance',
+        navFeatures: 'Fonctions', navWinterize: 'Hivernage', navAi: 'SparkPilot', navSupport: 'Assistance',
         pill: 'Android sur Google Play · iOS plus tard',
         heroTitle: 'Maîtrisez votre hors-bord.',
         heroLead: 'Compagnon offline-first pour l’entretien, les trajets, le diagnostic et les outils — avec SparkPilot expérimental sur l’appareil dans Premium.',
@@ -422,7 +424,7 @@
         aiLi3: 'Scan guidé et chat pour le moteur sélectionné.',
         aiLi4: 'Aide à la décision — vérifiez le manuel officiel.',
         premiumTitle: 'Sparkmaster Premium',
-        premiumLead: 'Un forfait pour tout le kit — dont SparkPilot expérimental.',
+        premiumLead: 'Un forfait annuel avec 7 jours d’essai — dont SparkPilot expérimental.',
         premium: [
           { tag: 'Premium', t: 'Historique & analyses', d: 'Historique illimitée, carburant, PDF et plusieurs moteurs.' },
           { tag: 'Premium', t: 'SparkPilot (bêta)', d: 'Diagnostic et chat sur l’appareil avec sources locales.' },
@@ -430,11 +432,11 @@
         ],
         ctaTitle: 'Obtenez Sparkmaster sur Android.',
         ctaLead: 'Sur Google Play. iOS plus tard. Support : support@sparkmaster.app',
-        footerPrivacy: 'Confidentialité', footerSupport: 'Assistance',
+        footerPrivacy: 'Confidentialité', footerSupport: 'Assistance', footerWinterize: 'Hivernage',
         metaDesc: 'App hors-bord offline-first : entretien, trajets, diagnostic et SparkPilot expérimental. Sur Google Play.'
       },
       sv: {
-        navFeatures: 'Funktioner', navAi: 'SparkPilot', navSupport: 'Support',
+        navFeatures: 'Funktioner', navWinterize: 'Vinterförvara', navAi: 'SparkPilot', navSupport: 'Support',
         pill: 'Android på Google Play · iOS senare',
         heroTitle: 'Ta kontroll över din utombordare.',
         heroLead: 'Offline-first-kompis för underhåll, turer, diagnostik och verktyg — med experimentell SparkPilot på enheten i Premium.',
@@ -457,7 +459,7 @@
         aiLi3: 'Guided scan och chatt för vald motor.',
         aiLi4: 'Endast beslutsstöd — kontrollera alltid handboken.',
         premiumTitle: 'Sparkmaster Premium',
-        premiumLead: 'En plan för hela verktygslådan — inklusive experimentell SparkPilot.',
+        premiumLead: 'Ett årsabonnemang med 7 dagars provperiod — inklusive experimentell SparkPilot.',
         premium: [
           { tag: 'Premium', t: 'Historik & analys', d: 'Obegränsad turhistorik, bränsle, PDF och flera motorer.' },
           { tag: 'Premium', t: 'SparkPilot (beta)', d: 'Diagnos och chatt på enheten med lokala källor.' },
@@ -465,11 +467,11 @@
         ],
         ctaTitle: 'Hämta Sparkmaster för Android.',
         ctaLead: 'På Google Play nu. iOS senare. Support: support@sparkmaster.app',
-        footerPrivacy: 'Integritet', footerSupport: 'Support',
+        footerPrivacy: 'Integritet', footerSupport: 'Support', footerWinterize: 'Vinterförvara',
         metaDesc: 'Offline-first-app för utombordare: underhåll, turer, diagnostik och experimentell SparkPilot. På Google Play.'
       },
       ja: {
-        navFeatures: '機能', navAi: 'SparkPilot', navSupport: 'サポート',
+        navFeatures: '機能', navWinterize: '冬支度', navAi: 'SparkPilot', navSupport: 'サポート',
         pill: 'AndroidはGoogle Play · iOSは後日',
         heroTitle: '船外機を、もっと確実に。',
         heroLead: '整備・航行・診断・ツールのためのオフライン優先アプリ。Premiumには実験的なオンデバイスSparkPilotが含まれます。',
@@ -492,7 +494,7 @@
         aiLi3: '選択したエンジン向けのガイドスキャンとチャット。',
         aiLi4: '判断の補助です。公式マニュアルで必ず確認を。',
         premiumTitle: 'Sparkmaster Premium',
-        premiumLead: 'フル機能を一つのプランで — 実験的SparkPilotを含む。',
+        premiumLead: '年額プラン、7日間の無料トライアル付き — 実験的SparkPilotを含む。',
         premium: [
           { tag: 'Premium', t: '履歴と分析', d: '無制限の航跡履歴、燃料、PDF、複数エンジン。' },
           { tag: 'Premium', t: 'SparkPilot（ベータ）', d: '端末内のガイド診断とチャット（ローカル根拠）。' },
@@ -500,11 +502,11 @@
         ],
         ctaTitle: 'AndroidでSparkmasterを入手。',
         ctaLead: 'Google Playで配信中。iOSは後日。サポート: support@sparkmaster.app',
-        footerPrivacy: 'プライバシー', footerSupport: 'サポート',
+        footerPrivacy: 'プライバシー', footerSupport: 'サポート', footerWinterize: '冬支度',
         metaDesc: '船外機向けオフライン優先アプリ：整備、航跡、診断、実験的SparkPilot。Google Playで。'
       },
       ko: {
-        navFeatures: '기능', navAi: 'SparkPilot', navSupport: '지원',
+        navFeatures: '기능', navWinterize: '겨울철', navAi: 'SparkPilot', navSupport: '지원',
         pill: 'Android는 Google Play · iOS는 추후',
         heroTitle: '선외기를 더 확실하게.',
         heroLead: '정비·항해·진단·도구를 위한 오프라인 우선 앱. Premium에는 실험적 온디바이스 SparkPilot이 포함됩니다.',
@@ -527,7 +529,7 @@
         aiLi3: '선택한 엔진용 가이드 스캔과 채팅.',
         aiLi4: '의사결정 보조일 뿐 — 공식 매뉴얼로 확인하세요.',
         premiumTitle: 'Sparkmaster Premium',
-        premiumLead: '전체 도구를 하나의 플랜으로 — 실험적 SparkPilot 포함.',
+        premiumLead: '연간 플랜, 7일 무료 체험 — 실험적 SparkPilot 포함.'
         premium: [
           { tag: 'Premium', t: '이력 & 분석', d: '무제한 항해 이력, 연료, PDF, 다중 엔진.' },
           { tag: 'Premium', t: 'SparkPilot(베타)', d: '온디바이스 가이드 진단과 채팅(로컬 근거).' },
@@ -535,7 +537,7 @@
         ],
         ctaTitle: 'Android에서 Sparkmaster 받기.',
         ctaLead: 'Google Play에서 제공. iOS는 추후. 지원: support@sparkmaster.app',
-        footerPrivacy: '개인정보', footerSupport: '지원',
+        footerPrivacy: '개인정보', footerSupport: '지원', footerWinterize: '겨울철',
         metaDesc: '선외기 오프라인 우선 앱: 정비, 항해, 진단, 실험적 SparkPilot. Google Play.'
       }
     };

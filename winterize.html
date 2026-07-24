@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sparkmaster — Winterize checklist</title>
+  <meta name="description" content="10-minute outboard winterization checklist. Log hours and seasonal steps offline with Sparkmaster on Google Play.">
+  <link rel="canonical" href="https://sparkmaster.app/winterize.html">
+  <link rel="icon" type="image/png" href="assets/app-icon.png">
+  <meta property="og:title" content="Sparkmaster — Winterize your outboard">
+  <meta property="og:description" content="A practical winter storage checklist for outboards — free core in Sparkmaster.">
+  <meta property="og:url" content="https://sparkmaster.app/winterize.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://sparkmaster.app/assets/logo-landscape.png">
+  <style>
+    :root {
+      --bg: #05070c; --text: #f6f7fb; --muted: #a9afbd; --dim: #737a8b;
+      --red: #ef2428; --card-border: rgba(255,255,255,0.10); --max: 720px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; color: var(--text);
+      background: radial-gradient(circle at 50% 0%, rgba(239,36,40,0.12), transparent 40%), var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, sans-serif; line-height: 1.6;
+    }
+    a { color: inherit; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 28px 22px 64px; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 800; margin-bottom: 28px; }
+    .brand img { width: 34px; height: 34px; border-radius: 8px; }
+    .lang { display: flex; gap: 6px; margin: 0 0 22px; flex-wrap: wrap; }
+    .lang button {
+      border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.06);
+      color: var(--muted); border-radius: 999px; padding: 6px 10px; cursor: pointer; font: inherit; font-size: 12px; font-weight: 700;
+    }
+    .lang button.active { background: var(--red); color: #fff; border-color: transparent; }
+    h1 { margin: 0 0 12px; font-size: clamp(28px, 5vw, 42px); letter-spacing: -0.04em; line-height: 1.1; }
+    .lead { color: var(--muted); font-size: 18px; margin: 0 0 28px; }
+    ol { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; }
+    ol li {
+      padding: 16px 18px; border: 1px solid var(--card-border);
+      border-radius: 16px; background: rgba(255,255,255,0.04);
+      display: grid; grid-template-columns: 28px 1fr; gap: 12px; align-items: start;
+    }
+    .n {
+      width: 28px; height: 28px; border-radius: 999px; background: var(--red);
+      display: grid; place-items: center; font-size: 13px; font-weight: 800;
+    }
+    .note { margin: 22px 0; color: var(--dim); font-size: 14px; }
+    .badges { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-top: 8px; }
+    .play-badge img { height: 54px; }
+    .back { display: inline-block; margin-top: 28px; color: var(--muted); text-decoration: none; }
+    .back:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="brand" href="/">
+      <img src="assets/app-icon.png" alt="" width="34" height="34">
+      Sparkmaster
+    </a>
+    <div class="lang" id="lang-switch" aria-label="Language"></div>
+    <h1 id="title">Winterize in 10 minutes.</h1>
+    <p class="lead" id="lead">A practical outboard checklist before storage. Free in Sparkmaster — works offline at the trailer.</p>
+    <ol id="steps"></ol>
+    <p class="note" id="note">Premium (7-day trial) adds PDF export, full history and SparkPilot — not required for this checklist.</p>
+    <div class="badges">
+      <a id="play-link" class="play-badge" rel="noopener noreferrer" target="_blank"
+         href="https://play.google.com/store/apps/details?id=app.sparkmaster.mobile&utm_source=winterize&utm_campaign=organic">
+        <img id="play-badge-img" src="GetItOnGooglePlay_Badge_Web_color_English.svg" alt="Get it on Google Play">
+      </a>
+    </div>
+    <a class="back" href="/" id="back">← Back to Sparkmaster</a>
+  </div>
+  <script>
+    var LANGS = [
+      { id: 'en', label: 'EN', badge: 'GetItOnGooglePlay_Badge_Web_color_English.svg' },
+      { id: 'fi', label: 'FI', badge: 'GetItOnGooglePlay_Badge_Web_color_Finnish.svg' },
+      { id: 'sv', label: 'SV', badge: 'GetItOnGooglePlay_Badge_Web_color_English.svg' }
+    ];
+    var T = {
+      en: {
+        title: 'Winterize in 10 minutes.',
+        lead: 'A practical outboard checklist before storage. Free in Sparkmaster — works offline at the trailer.',
+        steps: [
+          'Log current engine hours so spring service is not a guess.',
+          'Run the winterization checklist (fuel, cooling, fogging, battery, cover).',
+          'Note impeller / oil / anode status for next season.',
+          'Keep the service history on your phone — share a privacy-safe passport if needed.'
+        ],
+        note: 'Premium (7-day trial) adds PDF export, full history and SparkPilot — not required for this checklist.',
+        back: '← Back to Sparkmaster',
+        docTitle: 'Sparkmaster — Winterize checklist'
+      },
+      fi: {
+        title: 'Talvisäilytys 10 minuutissa.',
+        lead: 'Käytännön checklist perämoottorille ennen varastoa. Ilmainen Sparkmasterissa — toimii offline trailerin vieressä.',
+        steps: [
+          'Kirjaa käyttötunnit, jotta kevään huolto ei jää arvailuksi.',
+          'Käy talvisäilytyslista läpi (polttoaine, jäähdytys, fogging, akku, suojaus).',
+          'Merkitse impeller / öljy / anodit seuraavaa kautta varten.',
+          'Pidä huoltohistoria puhelimessa — jaa tarvittaessa yksityisyyttä suojaava passi.'
+        ],
+        note: 'Premium (7 pv kokeilu) lisää PDF-viennin, koko historian ja SparkPilotin — ei pakollinen tähän listaan.',
+        back: '← Takaisin Sparkmasteriin',
+        docTitle: 'Sparkmaster — Talvisäilytyslista'
+      },
+      sv: {
+        title: 'Vinterförvara på 10 minuter.',
+        lead: 'Praktisk checklista för utombordare före förvaring. Gratis i Sparkmaster — fungerar offline vid trailern.',
+        steps: [
+          'Logga motortimmar så vårservicen inte blir gissningar.',
+          'Gå igenom vinterchecklistan (bränsle, kylning, fogging, batteri, skydd).',
+          'Notera impeller / olja / anoder inför nästa säsong.',
+          'Behåll servicehistoriken i telefonen — dela ett integritetssäkert pass vid behov.'
+        ],
+        note: 'Premium (7 dagars provperiod) ger PDF, full historik och SparkPilot — krävs inte för listan.',
+        back: '← Tillbaka till Sparkmaster',
+        docTitle: 'Sparkmaster — Vinterchecklista'
+      }
+    };
+    function apply(lang) {
+      var t = T[lang] || T.en;
+      var meta = LANGS.find(function (x) { return x.id === lang; }) || LANGS[0];
+      document.documentElement.lang = lang;
+      document.title = t.docTitle;
+      document.getElementById('title').textContent = t.title;
+      document.getElementById('lead').textContent = t.lead;
+      document.getElementById('note').textContent = t.note;
+      document.getElementById('back').textContent = t.back;
+      document.getElementById('play-badge-img').src = meta.badge;
+      var ol = document.getElementById('steps');
+      ol.innerHTML = '';
+      t.steps.forEach(function (s, i) {
+        var li = document.createElement('li');
+        li.innerHTML = '<span class="n">' + (i + 1) + '</span><span>' + s + '</span>';
+        ol.appendChild(li);
+      });
+      document.querySelectorAll('.lang button').forEach(function (b) {
+        b.classList.toggle('active', b.dataset.lang === lang);
+      });
+      try { localStorage.setItem('sm_winterize_lang', lang); } catch (e) {}
+    }
+    var switchEl = document.getElementById('lang-switch');
+    LANGS.forEach(function (l) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.dataset.lang = l.id;
+      b.textContent = l.label;
+      b.addEventListener('click', function () { apply(l.id); });
+      switchEl.appendChild(b);
+    });
+    var start = 'en';
+    try {
+      var saved = localStorage.getItem('sm_winterize_lang');
+      if (saved && T[saved]) start = saved;
+      else if (/^fi/i.test(navigator.language || '')) start = 'fi';
+      else if (/^sv/i.test(navigator.language || '')) start = 'sv';
+    } catch (e) {}
+    apply(start);
+  </script>
+</body>
+</html>
