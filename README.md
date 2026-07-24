@@ -5,6 +5,7 @@ Static GitHub Pages website for [sparkmaster.app](https://sparkmaster.app).
 ## Files
 
 - `index.html` — landing page (8 languages: en, fi, de, es, fr, sv, ja, ko)
+- `winterize.html` — seasonal winterization checklist landing (en/fi/sv)
 - `privacy.html` — privacy language chooser (auto-redirects by browser/saved language; `?chooser=1` keeps the grid)
 - `privacy-*.html` — localized privacy policies from app legal markdown v2
 - `support.html` — support page (same 8 languages)
